@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Syne-Bold"), url("/fonts/Syne-Bold.woff2") format("woff2"), url("/fonts/Syne-Bold.woff") format("woff"), url("/fonts/Syne-Bold.ttf") format("truetype"), url("/fonts/Syne-Bold.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF;
+  /* Latin glyphs */
+}
+
+@font-face {
+  font-family: "Basier";
+  font-style: normal;
+  font-weight: 400;
+  src: local("basiersquare-regular-webfont"), url("/fonts/basiersquare-regular-webfont.woff2") format("woff2"), url("/fonts/basiersquare-regular-webfont.woff") format("woff"), url("/fonts/basiersquare-regular-webfont.ttf") format("truetype"), url("/fonts/basiersquare-regular-webfont.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF;
+  /* Latin glyphs */
+}
+
+/**
+**TABLE OF CONTENTS**
+1-Variables
+2-Normalize
+2b-Media Query Breakpoints
+3-Element Defaults
+4-Layouts & Alignment
+5-Typography
+6-Modules
+7-Page Specifics
+8-Additional Media Queries
+**/
+/** Colours **/
+/** Fonts **/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.hide-by-default {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

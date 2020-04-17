@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "Syne";
+    font-style: normal;
+    font-weight: bold;
+    src: local("Syne-Bold"),
+        url("/fonts/Syne-Bold.woff2") format("woff2") /* will be preloaded */,
+        url("/fonts/Syne-Bold.woff") format("woff"),
+        url("/fonts/Syne-Bold.ttf") format("truetype"),
+        url("/fonts/Syne-Bold.eot") format("embedded-opentype");
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "Basier";
+    font-style: normal;
+    font-weight: 400;
+    src: local("basiersquare-regular-webfont"),
+        url("/fonts/basiersquare-regular-webfont.woff2") format("woff2")
+            /* will be preloaded */,
+        url("/fonts/basiersquare-regular-webfont.woff") format("woff"),
+        url("/fonts/basiersquare-regular-webfont.ttf") format("truetype"),
+        url("/fonts/basiersquare-regular-webfont.eot")
+            format("embedded-opentype");
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+/**
+**TABLE OF CONTENTS**
+1-Variables
+2-Normalize
+2b-Media Query Breakpoints
+3-Element Defaults
+4-Layouts & Alignment
+5-Typography
+6-Modules
+7-Page Specifics
+8-Additional Media Queries
+**/
+
+//! 1 - Variables Begin
+
+/** Colours **/
+$dark1: #2d2824;
+$dark2: #211d1a;
+
+$light1: #faf7f6;
+$light2: #f6f2f0;
+$light3: #eae4e2;
+$light4: #ddd4d0;
+$light4: #d7ccc8;
+
+$medium1: #826b64;
+$medium2: #55372e;
+
+$accent: #ab5033;
+
+$whatsapp: rgba(37, 211, 102, 0.7);
+$facebook: linear-gradient(
+    90deg,
+    rgba(0, 163, 255, 0.7) 0%,
+    rgba(0, 147, 254, 0.7) 47.92%,
+    rgba(2, 136, 255, 0.7) 100%
+);
+$instagram: linear-gradient(
+    90deg,
+    rgba(252, 155, 24, 0.7) 0%,
+    rgba(245, 12, 2, 0.7) 47.92%,
+    rgba(204, 0, 121, 0.7) 100%
+);
+
+/** Fonts **/
+$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
+    "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter",
+    "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow",
+    "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L",
+    Georgia, serif;
+
+//! 1 - Variables End
+
+//! 2 - Normalize Begins
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $main;
+}
+//! 2 - Normalize Ends
+
+//! 2b - Media Query Breakpoints Begin
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape-down {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+//! 2b - Media Query Breakpoints End Defaults Begin
+
+//! 3 - Defaults Begin
+.hide-by-default {
+    display: none;
+}
+
+.mobile-only {
+    @include for-tablet-landscape-up {
+        display: none;
+    }
+}
+
+.desktop-only {
+    @include for-tablet-landscape-down {
+        display: none;
+    }
+}
+//! 3 - Defaults End
+
+//! 4 - Layout & Alignment Begins
+
+//! 4 - Layout & Alignment Ends
