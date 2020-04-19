@@ -21,24 +21,29 @@
 1-Variables
 2-Normalize
 2b-Media Query Breakpoints
-3-Element Defaults
+3-Element Defaults & Hidden Defaults
 4-Layouts & Alignment
 5-Typography
 6-Modules
 7-Page Specifics
-8-Additional Media Queries
 **/
-/** Colours **/
-/** Fonts **/
+/*! 1 - Variables Begin**/
+/*! 1 - Variables End**/
+/*! 2 - Normalize Begins**/
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #2d2824;
 }
 
-.hide-by-default {
+/*! 2 - Normalize Ends**/
+/*! 2b - Media Query Breakpoints Begin**/
+/*! 2b - Media Query Breakpoints End Defaults Begin**/
+/*! 3 - Defaults Begin**/
+.hide-by-default,
+.hide {
   display: none;
 }
 
@@ -53,4 +58,520 @@
     display: none;
   }
 }
+
+.push-below-header {
+  margin-top: 87.8px;
+}
+
+/*! 3 - Defaults End**/
+/*! 4 - Layout & Alignment Begins**/
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.display-grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.half-half-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .half-half-layout > .first-half {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .half-half-layout > .second-half {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  .half-half-layout {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.quad-grid-layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto;
+}
+
+@media (min-width: 900px) {
+  .quad-grid-layout {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+  }
+}
+
+.vertically-center-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.vertically-center-content.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.horizontally-center-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.horizontally-center-content.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.center-align-text {
+  text-align: center;
+}
+
+/*! 4 - Layout & Alignment Ends**/
+/*! 5 - Typography Begins**/
+.heading-level-1 {
+  font-size: 2.15rem;
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  line-height: 109.5%;
+}
+
+.heading-level-1 .home-main-text-s {
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  display: block;
+}
+
+.heading-level-2 {
+  font-size: 1.5rem;
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.heading-level-2 .heading-level2-big {
+  display: block;
+}
+
+.heading-level-2 .paragraph {
+  display: block;
+  font-weight: normal;
+}
+
+p,
+.paragraph {
+  font-size: 0.9rem;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: none;
+}
+
+/*! 5 - Typography Ends**/
+/*! 6 - Modules Begin**/
+/** Small Modules**/
+.regular-button {
+  font-size: 0.877rem;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #f6f2f0;
+  background-color: #211d1a;
+  padding: 1.2rem 1.55rem;
+}
+
+.regular-button:hover {
+  cursor: pointer;
+}
+
+.regular-button.orange-regular-button {
+  background-color: #ab5033;
+}
+
+.regular-button.light-regular-button {
+  background-color: #f6f2f0;
+  color: #2d2824;
+}
+
+.link-button {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0.75rem;
+  color: #ab5033;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid #ab5033;
+  padding-bottom: 0.313rem;
+}
+
+.link-arrow-button {
+  text-decoration: none;
+}
+
+.link-arrow-button .link-arrow-button-text {
+  font-size: 1rem;
+  margin-right: 10px;
+  text-transform: capitalize;
+}
+
+.link-arrow-button .link-arrow-button-text.syne {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+}
+
+.link-arrow-button .link-arrow-button-icon {
+  height: 17px;
+  width: 17px;
+}
+
+.link-arrow-button .link-arrow-button-icon path {
+  stroke: #2d2824;
+  stroke-width: 5;
+}
+
+/** Large Modules**/
+/** Header Begins **/
+.header {
+  padding: 1rem 4%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #eae4e2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .header {
+    padding: 2.5rem 26%;
+  }
+}
+
+.mobile-nav {
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .mobile-nav.mobile-only {
+    display: none;
+  }
+}
+
+.mobile-nav-check {
+  background-color: yellow;
+  display: block;
+  height: 27px;
+  width: 47px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.mobile-nav-icon-svg {
+  position: absolute;
+}
+
+.mobile-nav-lists-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #eae4e2;
+  border-top: 1px solid #d7ccc8;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  /**height of header used to push menu down**/
+  margin-top: 87.8px;
+}
+
+/** Additional div wrapper added to make fixed parent scrollable **/
+.mobile-nav-list-innerwrapper {
+  overflow-y: auto;
+  height: 100%;
+}
+
+/** Dynamic behaviour of hamburger **/
+.mobile-nav-check:checked ~ .mobile-nav-lists-container {
+  display: block;
+}
+
+.mobile-nav-check:checked ~ .hamburger-icon {
+  display: none;
+}
+
+.mobile-nav-check ~ .hamburger-icon {
+  display: block;
+}
+
+.mobile-nav-check:checked ~ .close-hamburger-icon {
+  display: block;
+}
+
+.mobile-nav-list {
+  padding-top: 2.6rem;
+}
+
+.mobile-nav-list-last {
+  padding-bottom: 2.6rem;
+}
+
+.mobile-nav-footer {
+  padding: 1.7rem 0;
+  border-top: 1px solid #d7ccc8;
+  border-bottom: 1px solid #d7ccc8;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  row-gap: 1.7rem;
+}
+
+.mobile-nav-list-item,
+.mobile-nav-footer-item {
+  list-style-position: inside;
+  list-style-type: none;
+}
+
+.mobile-nav-list-item {
+  padding-top: 1.125rem;
+}
+
+.mobile-nav-list-item.heading {
+  padding-top: 0;
+}
+
+.mobile-nav-item-link,
+.mobile-nav-item-link-header,
+.mobile-nav-footer-link {
+  text-decoration: none;
+}
+
+.mobile-nav-item-link {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 0.95rem;
+}
+
+.mobile-nav-item-link-header {
+  font-size: 1.125rem;
+}
+
+.mobile-nav-item-link-header,
+.mobile-nav-footer-link {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+}
+
+.mobile-nav-footer-link {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+.logo-text-svg {
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .logo-text-svg {
+    width: 9rem;
+  }
+}
+
+.cart-button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cart-count {
+  padding: 0.04rem 0.313rem;
+  border-radius: 50%;
+  background-color: #ab5033;
+  color: #f6f2f0;
+  margin-left: 0.1em;
+}
+
+/** Header Ends **/
+/** Product Card Begins **/
+.product-trio {
+  width: 100%;
+  overflow: auto;
+}
+
+.full-product-card {
+  margin-right: 4%;
+}
+
+.full-product-card:last-child {
+  margin-right: 8%;
+}
+
+.product-card-link {
+  text-decoration: none;
+}
+
+.product-bg {
+  width: 15.625rem;
+  height: 16.26rem;
+  background-color: #eae4e2;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.product-bg:hover {
+  background-color: #ddd4d0;
+}
+
+.product-image {
+  max-height: 80%;
+  max-width: 80%;
+}
+
+.product-name,
+.product-price {
+  text-align: center;
+}
+
+.product-name {
+  margin-top: 0.928rem;
+}
+
+.product-price {
+  margin-top: 0.625rem;
+}
+
+.product-price {
+  color: #826b64;
+}
+
+/** Product Card Ends **/
+/*! 6 - Modules End**/
+/*! 7 - Page Specifics Begin**/
+/** Landing Page Begins **/
+.hero-text {
+  height: 22rem;
+  background-color: #d7ccc8;
+}
+
+.hero-text .regular-button {
+  margin-top: 2.5rem;
+}
+
+.home-main-text {
+  width: 280px;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.story-nudge {
+  height: 19.938rem;
+  background-color: #eae4e2;
+}
+
+.story-nudge-text {
+  line-height: 188%;
+  font-size: 0.938rem;
+  padding: 0 9.1%;
+}
+
+.story-nudge-button {
+  margin-top: 1.563rem;
+}
+
+.popular-products-section {
+  background-color: #f6f2f0;
+  height: 40.125rem;
+}
+
+.popular-today-heading {
+  margin-bottom: 1.875rem;
+}
+
+.see-all-button {
+  margin-top: 3.125rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.discover-categories-section {
+  width: 100%;
+  background-color: #eae4e2;
+  padding: 6.25rem 0;
+}
+
+.discover-categories-heading {
+  width: 12.75rem;
+  margin: auto;
+}
+
+.category-details-container {
+  width: 73.3%;
+  margin: auto;
+}
+
+.home-product-category {
+  margin-top: 5.625rem;
+}
+
+.home-product-category:first-child {
+  margin-top: 2.813rem;
+}
+
+.category-image {
+  width: 100%;
+}
+
+.category-cta {
+  margin-top: 1rem;
+}
+
+.multidimensional-category-arrow {
+  display: inline-block;
+}
+
+.category-description {
+  margin-top: 0.8rem;
+}
+
+/** Landing Page Ends**/
+/*! 7 - Page Specifics End**/
 /*# sourceMappingURL=style.css.map */

@@ -28,126 +28,179 @@
     <body>
         <div class="body-wrap">
             <header class="header vertically-center-content">
-                <nav class="mobile-nav mobile-only">
-                    <label for="mobile-nav-button" class="mobile-nav-icon">
-                        <svg
-                            class="mobile-nav-icon-svg"
-                            width="24"
-                            height="16"
-                            viewBox="0 0 24 16"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M1.5 8H22.5"
-                                stroke="#2D2824"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M1.5 1H22.5"
-                                stroke="#2D2824"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M1.5 15H22.5"
-                                stroke="#2D2824"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
+                <nav class="mobile-nav mobile-only vertically-center-content">
+                    <label
+                        for="mobile-nav-check"
+                        class="mobile-nav-icon hamburger-icon-wrapper"
+                    >
                     </label>
+
                     <input
                         type="checkbox"
                         name="mobile-nav-check"
-                        class="mobile-nav-check"
+                        class="hamburger-toggle mobile-nav-check"
                         id="mobile-nav-check"
                     />
-                    <ul class="mobile-nav-list hide-by-default">
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Shop Online</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Furniture</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#">Parquet</a>
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#">Doors</a>
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Multidimensional</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#">Rugs</a>
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Accessories</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Shop All</a
-                            >
-                        </li>
-                    </ul>
-                    <ul class="mobile-nav-list hide-by-default">
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Our Services</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Bespoke Manufacturing</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Kiln Drying</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Parquet Installations</a
-                            >
-                        </li>
-                        <li class="mobile-nav-list-item">
-                            <a class="mobile-nav-item-link" href="#"
-                                >Door Installations</a
-                            >
-                        </li>
-                    </ul>
-                    <ul class="mobile-nav-footer hide-by-default">
-                        <li class="mobile-nav-footer-item">
-                            <a class="mobile-nav-footer-link" href="#">Login</a>
-                        </li>
-                        <li class="mobile-nav-footer-item">
-                            <a class="mobile-nav-footer-link" href="#"
-                                >Contact Us</a
-                            >
-                        </li>
-                        <li class="mobile-nav-footer-item">
-                            <a class="mobile-nav-footer-link" href="#">Help</a>
-                        </li>
-                        <li class="mobile-nav-footer-item">
-                            <a class="mobile-nav-footer-link" href="#"
-                                >About Us</a
-                            >
-                        </li>
-                    </ul>
+
+                    <svg
+                        class="hamburger-icon mobile-nav-icon-svg"
+                        width="24"
+                        height="16"
+                        viewBox="0 0 24 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M1.5 8H22.5"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M1.5 1H22.5"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M1.5 15H22.5"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                    <svg
+                        class="close-hamburger-icon hide-by-default mobile-nav-icon-svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M18 1L1 18"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M1 1L18 18"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+
+                    <div class="mobile-nav-lists-container hide-by-default">
+                        <!-- Additional div wrapper added to make fixed parent scrollable -->
+                        <div class="mobile-nav-list-innerwrapper">
+                            <ul class="mobile-nav-list">
+                                <li class="mobile-nav-list-item heading">
+                                    <a
+                                        class="mobile-nav-item-link-header"
+                                        href="#"
+                                        >Shop Online</a
+                                    >
+                                </li>
+                                <li
+                                    class="mobile-nav-list-item mobile-nav-list-item-first"
+                                >
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Furniture</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Parquet</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Doors</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Multidimensional</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Rugs</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Accessories</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Shop All</a
+                                    >
+                                </li>
+                            </ul>
+                            <ul class="mobile-nav-list mobile-nav-list-last">
+                                <li class="mobile-nav-list-item heading">
+                                    <a
+                                        class="mobile-nav-item-link-header"
+                                        href="#"
+                                        >Our Services</a
+                                    >
+                                </li>
+                                <li
+                                    class="mobile-nav-list-item mobile-nav-list-item-first"
+                                >
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Bespoke Manufacturing</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Kiln Drying</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Parquet Installations</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-list-item">
+                                    <a class="mobile-nav-item-link" href="#"
+                                        >Door Installations</a
+                                    >
+                                </li>
+                            </ul>
+                            <ul class="mobile-nav-footer">
+                                <li class="mobile-nav-footer-item">
+                                    <a class="mobile-nav-footer-link" href="#"
+                                        >Login</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-footer-item">
+                                    <a class="mobile-nav-footer-link" href="#"
+                                        >Contact Us</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-footer-item">
+                                    <a class="mobile-nav-footer-link" href="#"
+                                        >Help</a
+                                    >
+                                </li>
+                                <li class="mobile-nav-footer-item">
+                                    <a class="mobile-nav-footer-link" href="#"
+                                        >About Us</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
                 <nav class="desktop-left-nav desktop-only">
                     <ul class="desktop-nav-list">
@@ -198,47 +251,54 @@
                     </ul>
                 </nav>
 
-                <button href="#" class="cart-button">
-                    <div class="cart-button-container">
-                        <svg
-                            class="cart-svg"
-                            width="28"
-                            height="27"
-                            viewBox="0 0 28 27"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M10.5 25.4217C11.1443 25.4217 11.6666 24.9011 11.6666 24.2588C11.6666 23.6165 11.1443 23.0958 10.5 23.0958C9.85565 23.0958 9.33331 23.6165 9.33331 24.2588C9.33331 24.9011 9.85565 25.4217 10.5 25.4217Z"
-                                stroke="#2D2824"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M23.3333 25.4217C23.9777 25.4217 24.5 24.9011 24.5 24.2588C24.5 23.6165 23.9777 23.0958 23.3333 23.0958C22.689 23.0958 22.1667 23.6165 22.1667 24.2588C22.1667 24.9011 22.689 25.4217 23.3333 25.4217Z"
-                                stroke="#2D2824"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                            <path
-                                d="M1.16666 1H5.83332L8.95999 16.5719C9.06667 17.1073 9.35888 17.5882 9.78546 17.9305C10.212 18.2728 10.7458 18.4547 11.2933 18.4442H22.6333C23.1808 18.4547 23.7146 18.2728 24.1412 17.9305C24.5678 17.5882 24.86 17.1073 24.9667 16.5719L26.8333 6.81473H6.99999"
-                                stroke="#2D2824"
-                                stroke-width="1.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
-                        <div class="cart-count">0</div>
-                    </div>
+                <button
+                    href="#"
+                    class="cart-button display-flex vertically-center-content"
+                >
+                    <!-- <div class="cart-button-container"> -->
+                    <svg
+                        class="cart-svg"
+                        width="28"
+                        height="27"
+                        viewBox="0 0 28 27"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M10.5 25.4217C11.1443 25.4217 11.6666 24.9011 11.6666 24.2588C11.6666 23.6165 11.1443 23.0958 10.5 23.0958C9.85565 23.0958 9.33331 23.6165 9.33331 24.2588C9.33331 24.9011 9.85565 25.4217 10.5 25.4217Z"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M23.3333 25.4217C23.9777 25.4217 24.5 24.9011 24.5 24.2588C24.5 23.6165 23.9777 23.0958 23.3333 23.0958C22.689 23.0958 22.1667 23.6165 22.1667 24.2588C22.1667 24.9011 22.689 25.4217 23.3333 25.4217Z"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M1.16666 1H5.83332L8.95999 16.5719C9.06667 17.1073 9.35888 17.5882 9.78546 17.9305C10.212 18.2728 10.7458 18.4547 11.2933 18.4442H22.6333C23.1808 18.4547 23.7146 18.2728 24.1412 17.9305C24.5678 17.5882 24.86 17.1073 24.9667 16.5719L26.8333 6.81473H6.99999"
+                            stroke="#2D2824"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                    <span class="cart-count">0</span>
+                    <!-- </div> -->
                 </button>
             </header>
 
-            <main>
+            <main class="push-below-header">
                 <section class="hero half-half-layout">
-                    <div class="first-half hero-text vertically-center-content">
-                        <h1 class="home-main-text heading-level-1">
+                    <div
+                        class="first-half hero-text vertically-center-content horizontally-center-content flex-column"
+                    >
+                        <h1
+                            class="home-main-text heading-level-1 center-align-text"
+                        >
                             <span class="home-main-text-s"
                                 >Beautiful, Expert-Crafted</span
                             >
@@ -250,17 +310,15 @@
                             >Explore Our Products</a
                         >
                     </div>
-                    <div class="second-half hero-image-container">
-                        <img
-                            class="hero-image"
-                            src="images/hero-main.jpg"
-                            alt="modern living room with wood flooring"
-                        />
-                    </div>
+                    <img
+                        class="second-half hero-image"
+                        src="images/hero-main.jpg"
+                        alt="modern living room with wood flooring"
+                    />
                 </section>
 
                 <section class="scroll-and-story-nudge">
-                    <button class="scroll-nudge">
+                    <button class="scroll-nudge desktop-only">
                         <p class="scroll-text">Scroll</p>
                         <svg
                             class="scroll-arrow"
@@ -287,8 +345,10 @@
                         </svg>
                     </button>
 
-                    <div class="vertically-center-content">
-                        <p class="story-nudge-text">
+                    <div
+                        class="story-nudge vertically-center-content horizontally-center-content flex-column"
+                    >
+                        <p class="story-nudge-text center-align-text">
                             Over the past 44 years, we have perfected the art of
                             manufacturing beautiful products from Nigerian wood,
                             without ever compromising on quality.
@@ -299,10 +359,16 @@
                     </div>
                 </section>
 
-                <section class="popular-products-section">
-                    <h2 class="heading-level-2">Popular Today</h2>
+                <section
+                    class="popular-products-section horizontally-center-content flex-column"
+                >
+                    <h2
+                        class="heading-level-2 center-align-text popular-today-heading"
+                    >
+                        Popular Today
+                    </h2>
                     <div class="products-with arrows">
-                        <button class="right-arrow-button-bg desktop-only">
+                        <button class="right-arrow-button desktop-only">
                             <svg
                                 width="51"
                                 height="51"
@@ -326,54 +392,64 @@
                                 />
                             </svg>
                         </button>
-                        <div class="product-trio home-product-showcase">
+                        <div
+                            class="product-trio home-product-showcase display-flex"
+                        >
                             <div class="full-product-card">
-                                <a href="">
-                                    <div class="product-bg">
+                                <a href="" class="product-card-link">
+                                    <div
+                                        class="product-bg vertically-center-content horizontally-center-content"
+                                    >
                                         <img
                                             class="product-image"
-                                            src="images/products/drawer-fitted-cabinet.jpg"
+                                            src="images/products/drawer-fitted-cabinet.png"
                                             alt="upright three-row wooden cabinet"
                                         />
                                     </div>
                                     <p class="product-name">
                                         Drawer Fitted Cabinet
                                     </p>
-                                    <p class="product-price">#150,000</p>
+                                    <p class="product-price">₦150,000</p>
                                 </a>
                             </div>
 
                             <div class="full-product-card">
-                                <a href="">
-                                    <div class="product-bg">
+                                <a href="" class="product-card-link">
+                                    <div
+                                        class="product-bg vertically-center-content horizontally-center-content"
+                                    >
                                         <img
                                             class="product-image"
                                             src="images/products/softie-pillows.png"
                                             alt="upright three-row wooden cabinet"
                                         />
                                     </div>
-                                    <p class="product-name">Softie Pillows</p>
-                                    <p class="product-price">#10,000</p>
+                                    <p class="product-name">
+                                        Softie Pillows
+                                    </p>
+                                    <p class="product-price">₦10,000</p>
                                 </a>
                             </div>
 
                             <div class="full-product-card">
-                                <a href="">
-                                    <div class="product-bg">
+                                <a href="" class="product-card-link">
+                                    <div
+                                        class="product-bg vertically-center-content horizontally-center-content"
+                                    >
                                         <img
                                             class="product-image"
-                                            src="images/products/curved-hind-chair.jpg"
+                                            src="images/products/curved-hind-chair.png"
                                             alt="upright three-row wooden cabinet"
                                         />
                                     </div>
                                     <p class="product-name">
                                         Curved Hind Chair
                                     </p>
-                                    <p class="product-price">#70,000</p>
+                                    <p class="product-price">₦70,000</p>
                                 </a>
                             </div>
                         </div>
-                        <button class="right-arrow-button-bg desktop-only">
+                        <button class="right-arrow-button desktop-only">
                             <svg
                                 class="right-arrow-button-icon"
                                 width="51"
@@ -399,13 +475,17 @@
                             </svg>
                         </button>
                     </div>
-                    <a href="#" class="regular-button">See All Products</a>
+                    <a
+                        href="#"
+                        class="regular-button see-all-button center-align-text"
+                        >See All Products</a
+                    >
                 </section>
 
                 <section class="discover-categories-section">
-                    <h2 class="heading-level-2">
-                        <span class="paragraph">Discover our main</span>
-                        <span class="heading-level2-big"
+                    <h2 class="discover-categories-heading heading-level-2 center-align-text">
+                        <span class="paragraph">Discover our main</span
+                        ><span class="heading-level2-big"
                             >Product Categories</span
                         >
                     </h2>
@@ -423,7 +503,10 @@
                                 src="images/home-floors.jpg"
                                 alt="close up of a wooden floor"
                             />
-                            <a href="" class="category-cta link-arrow-button">
+                            <a
+                                href=""
+                                class="category-cta link-arrow-button display-flex vertically-center-content"
+                            >
                                 <span
                                     class="mobile-only category-cta-text link-arrow-button-text syne"
                                 >
@@ -433,7 +516,7 @@
                                 >
                                     Shop Floors</span
                                 ><svg
-                                    class="category-cta-arrow"
+                                    class="category-cta-arrow link-arrow-button-icon"
                                     width="51"
                                     height="51"
                                     viewBox="0 0 51 51"
@@ -472,7 +555,10 @@
                                 src="images/home-doors.jpg"
                                 alt="two wooden doors with metal handles"
                             />
-                            <a href="" class="category-cta link-arrow-button">
+                            <a
+                                href=""
+                                class="category-cta link-arrow-button display-flex vertically-center-content"
+                            >
                                 <span
                                     class="mobile-only category-cta-text link-arrow-button-text syne"
                                     >Doors</span
@@ -480,7 +566,7 @@
                                     class="desktop-only category-cta-text link-arrow-button-text syne"
                                     >Shop Doors</span
                                 ><svg
-                                    class="category-cta-arrow"
+                                    class="category-cta-arrow link-arrow-button-icon"
                                     width="51"
                                     height="51"
                                     viewBox="0 0 51 51"
@@ -521,7 +607,10 @@
                                 src="images/home-furniture.jpg"
                                 alt="room with wooden floors and modern furniture"
                             />
-                            <a href="" class="category-cta link-arrow-button">
+                            <a
+                                href=""
+                                class="category-cta link-arrow-button display-flex vertically-center-content"
+                            >
                                 <span
                                     class="mobile-only category-cta-text link-arrow-button-text syne"
                                     >Furniture</span
@@ -529,7 +618,7 @@
                                     class="desktop-only category-cta-text link-arrow-button-text syne"
                                     >Shop Furniture</span
                                 ><svg
-                                    class="category-cta-arrow"
+                                    class="category-cta-arrow link-arrow-button-icon"
                                     width="51"
                                     height="51"
                                     viewBox="0 0 51 51"
@@ -570,15 +659,18 @@
                                 src="images/home-pallets.jpg"
                                 alt="stacked industrial pallets"
                             />
-                            <a href="" class="category-cta link-arrow-button">
+                            <a
+                                href=""
+                                class="category-cta link-arrow-button display-flex vertically-center-content"
+                            >
                                 <span
-                                    class="mobile-only category-cta-text link-arrow-button-text syne"
+                                    class="mobile-only home-multidimensional-category-text category-cta-text link-arrow-button-text syne"
                                     >Multidimensional Wood Products</span
                                 ><span
                                     class="desktop-only category-cta-text link-arrow-button-text syne"
                                     >Shop</span
                                 ><svg
-                                    class="category-cta-arrow"
+                                    class="category-cta-arrow multidimensional-category-arrow link-arrow-button-icon"
                                     width="51"
                                     height="51"
                                     viewBox="0 0 51 51"
@@ -623,7 +715,7 @@
 
                     <section class="half-half-layout home-staircases-section">
                         <div
-                            class="first-half home-bespoke-text home-staircases-text vertically-center-content"
+                            class="first-half home-bespoke-text home-staircases-text vertically-center-content flex-column"
                         >
                             <h3 class="bespoke-product-heading">
                                 <span class="bespoke-product-heading-big"
@@ -657,7 +749,7 @@
                         </div>
 
                         <div
-                            class="second-half home-bespoke-text home-cabinets-text vertically-center-content"
+                            class="second-half home-bespoke-text home-cabinets-text vertically-center-content flex-column"
                         >
                             <h3 class="bespoke-product-heading">
                                 <span class="bespoke-product-heading-big"
@@ -694,19 +786,22 @@
                 >
                     <header class="home-services-header">
                         <h2 class="heading-level-2">
-                            <span class="heading-level2-big">Our Services</span>
+                            <span class="heading-level2-big center-align-text"
+                                >Our Services</span
+                            >
                             <span class="paragraph">
                                 In addition to manufacturing high quality
                                 products, we also provide a number of
                                 services.</span
                             >
-                            <a href="#" class="regular-button">See Our Rates</a>
                         </h2>
+                        <a href="#" class="regular-button">See Our Rates</a>
                     </header>
 
                     <div class="services-cards-with-arrows">
-                        <button class="right-arrow-button-bg desktop-only">
+                        <button class="left-arrow-button desktop-only">
                             <svg
+                                class="left-arrow-button-icon"
                                 width="51"
                                 height="51"
                                 viewBox="0 0 51 51"
@@ -787,7 +882,7 @@
                                 </p>
                             </section>
                         </div>
-                        <button class="right-arrow-button-bg desktop-only">
+                        <button class="right-arrow-button desktop-only">
                             <svg
                                 class="right-arrow-button-icon"
                                 width="51"
@@ -835,7 +930,7 @@
                                 the button below to send us your project idea.
                             </span>
                         </h2>
-                        <a class="regular-button light-button" href="#"
+                        <a class="regular-button light-regular-button" href="#"
                             >Send A Project Request</a
                         >
                     </div>

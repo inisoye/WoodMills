@@ -29,17 +29,14 @@
 1-Variables
 2-Normalize
 2b-Media Query Breakpoints
-3-Element Defaults
+3-Element Defaults & Hidden Defaults
 4-Layouts & Alignment
 5-Typography
 6-Modules
 7-Page Specifics
-8-Additional Media Queries
 **/
 
-//! 1 - Variables Begin
-
-/** Colours **/
+/*! 1 - Variables Begin**/
 $dark1: #2d2824;
 $dark2: #211d1a;
 
@@ -47,7 +44,7 @@ $light1: #faf7f6;
 $light2: #f6f2f0;
 $light3: #eae4e2;
 $light4: #ddd4d0;
-$light4: #d7ccc8;
+$light5: #d7ccc8;
 
 $medium1: #826b64;
 $medium2: #55372e;
@@ -68,7 +65,6 @@ $instagram: linear-gradient(
     rgba(204, 0, 121, 0.7) 100%
 );
 
-/** Fonts **/
 $main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -79,18 +75,18 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
     "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L",
     Georgia, serif;
 
-//! 1 - Variables End
+/*! 1 - Variables End**/
 
-//! 2 - Normalize Begins
+/*! 2 - Normalize Begins**/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: $main;
+    color: $dark1;
 }
-//! 2 - Normalize Ends
+/*! 2 - Normalize Ends**/
 
-//! 2b - Media Query Breakpoints Begin
+/*! 2b - Media Query Breakpoints Begin**/
 @mixin for-phone-only {
     @media (max-width: 599px) {
         @content;
@@ -121,10 +117,11 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
         @content;
     }
 }
-//! 2b - Media Query Breakpoints End Defaults Begin
+/*! 2b - Media Query Breakpoints End Defaults Begin**/
 
-//! 3 - Defaults Begin
-.hide-by-default {
+/*! 3 - Defaults Begin**/
+.hide-by-default,
+.hide {
     display: none;
 }
 
@@ -139,8 +136,481 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
         display: none;
     }
 }
-//! 3 - Defaults End
 
-//! 4 - Layout & Alignment Begins
+.push-below-header {
+    margin-top: 87.8px;
+}
+/*! 3 - Defaults End**/
 
-//! 4 - Layout & Alignment Ends
+/*! 4 - Layout & Alignment Begins**/
+.display-flex {
+    display: flex;
+}
+
+.display-grid {
+    display: grid;
+}
+
+.half-half-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > .first-half {
+        @include for-tablet-landscape-up {
+            width: 50%;
+        }
+    }
+
+    & > .second-half {
+        @include for-tablet-landscape-up {
+            width: 50%;
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        flex-direction: row;
+    }
+}
+
+.quad-grid-layout {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+
+    @include for-tablet-landscape-up {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+}
+
+.vertically-center-content {
+    display: flex;
+    align-items: center;
+
+    &.flex-column {
+        flex-direction: column;
+    }
+}
+
+.horizontally-center-content {
+    display: flex;
+    justify-content: center;
+
+    &.flex-column {
+        flex-direction: column;
+    }
+}
+
+.center-align-text {
+    text-align: center;
+}
+/*! 4 - Layout & Alignment Ends**/
+
+/*! 5 - Typography Begins**/
+.heading-level-1 {
+    font-size: 2.15rem;
+    font-family: $heading;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    line-height: 109.5%;
+
+    .home-main-text-s {
+        font-size: 0.9rem;
+        text-transform: capitalize;
+        letter-spacing: normal;
+        display: block;
+    }
+}
+
+.heading-level-2 {
+    font-size: 1.5rem;
+    font-family: $heading;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+
+    .heading-level2-big {
+        display: block;
+    }
+
+    .paragraph {
+        display: block;
+        font-weight: normal;
+        // font-style: normal;
+    }
+}
+
+p,
+.paragraph {
+    font-size: 0.9rem;
+    font-family: $main;
+    text-transform: none;
+}
+/*! 5 - Typography Ends**/
+
+/*! 6 - Modules Begin**/
+/** Small Modules**/
+.regular-button {
+    font-size: 0.877rem;
+    font-family: $main;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $light2;
+    background-color: $dark2;
+    padding: 1.2rem 1.55rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.orange-regular-button {
+        background-color: $accent;
+    }
+    &.light-regular-button {
+        background-color: $light2;
+        color: $dark1;
+    }
+}
+
+.link-button {
+    font-family: $heading;
+    font-size: 0.75rem;
+    color: $accent;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 2px solid $accent;
+    padding-bottom: 0.313rem;
+}
+
+.left-arrow-button,
+.right-arrow-button {
+    .right-arrow-button-icon,
+    .left-arrow-button-icon {
+    }
+}
+
+.link-arrow-button {
+    text-decoration: none;
+    .link-arrow-button-text {
+        font-size: 1rem;
+        margin-right: 10px;
+        text-transform: capitalize;
+
+        &.syne {
+            font-family: $heading;
+            text-transform: uppercase;
+        }
+    }
+    .link-arrow-button-icon {
+        height: 17px;
+        width: 17px;
+
+        path {
+            stroke: $dark1;
+            stroke-width: 5;
+        }
+    }
+}
+
+/** Large Modules**/
+
+/** Header Begins **/
+.header {
+    padding: 1rem 4%;
+    justify-content: space-between;
+    background-color: $light3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @include for-tablet-landscape-up {
+        padding: 2.5rem 26%;
+    }
+}
+
+.mobile-nav {
+    position: relative;
+
+    &.mobile-only {
+        @include for-tablet-landscape-up {
+            display: none;
+        }
+    }
+}
+
+.mobile-nav-check {
+    background-color: yellow;
+    display: block;
+    height: 27px;
+    width: 47px;
+    z-index: 10;
+    opacity: 0;
+}
+
+.mobile-nav-icon-svg {
+    position: absolute;
+}
+
+.mobile-nav-lists-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-color: $light3;
+    border-top: 1px solid $light5;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+
+    /**height of header used to push menu down**/
+    margin-top: 87.8px;
+}
+
+/** Additional div wrapper added to make fixed parent scrollable **/
+.mobile-nav-list-innerwrapper {
+    overflow-y: auto;
+    height: 100%;
+}
+
+/** Dynamic behaviour of hamburger **/
+.mobile-nav-check:checked ~ .mobile-nav-lists-container {
+    display: block;
+}
+
+.mobile-nav-check:checked ~ .hamburger-icon {
+    display: none;
+}
+
+.mobile-nav-check ~ .hamburger-icon {
+    display: block;
+}
+
+.mobile-nav-check:checked ~ .close-hamburger-icon {
+    display: block;
+}
+
+.mobile-nav-list {
+    padding-top: 2.6rem;
+}
+
+.mobile-nav-list-last {
+    padding-bottom: 2.6rem;
+}
+
+.mobile-nav-footer {
+    padding: 1.7rem 0;
+    border-top: 1px solid $light5;
+    border-bottom: 1px solid $light5;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 1.7rem;
+}
+
+.mobile-nav-list-item,
+.mobile-nav-footer-item {
+    list-style-position: inside;
+    list-style-type: none;
+}
+
+.mobile-nav-list-item {
+    padding-top: 1.125rem;
+
+    &.heading {
+        padding-top: 0;
+    }
+}
+
+.mobile-nav-item-link,
+.mobile-nav-item-link-header,
+.mobile-nav-footer-link {
+    text-decoration: none;
+}
+
+.mobile-nav-item-link {
+    font-family: $main;
+    font-size: 0.95rem;
+}
+
+.mobile-nav-item-link-header {
+    font-size: 1.125rem;
+}
+
+.mobile-nav-item-link-header,
+.mobile-nav-footer-link {
+    font-family: $heading;
+    text-transform: uppercase;
+}
+
+.mobile-nav-footer-link {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+.logo-text-svg {
+    margin-top: 0.3rem;
+    @include for-tablet-landscape-down {
+        width: 9rem;
+    }
+}
+
+.cart-button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cart-count {
+    padding: 0.04rem 0.313rem;
+    border-radius: 50%;
+    background-color: $accent;
+    color: $light2;
+    margin-left: 0.1em;
+}
+/** Header Ends **/
+
+/** Product Card Begins **/
+.product-trio {
+    width: 100%;
+    overflow: auto;
+}
+
+.full-product-card {
+    margin-right: 4%;
+
+    &:last-child {
+        margin-right: 8%;
+    }
+}
+
+.product-card-link {
+    text-decoration: none;
+}
+
+.product-bg {
+    width: 15.625rem;
+    height: 16.26rem;
+    background-color: $light3;
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-color: $light4;
+    }
+}
+
+.product-image {
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.product-name,
+.product-price {
+    text-align: center;
+}
+
+.product-name {
+    margin-top: 0.928rem;
+}
+.product-price {
+    margin-top: 0.625rem;
+}
+
+.product-price {
+    color: $medium1;
+}
+/** Product Card Ends **/
+
+/*! 6 - Modules End**/
+
+/*! 7 - Page Specifics Begin**/
+
+/** Landing Page Begins **/
+.hero-text {
+    height: 22rem;
+    background-color: $light5;
+
+    .regular-button {
+        margin-top: 2.5rem;
+    }
+}
+
+.home-main-text {
+    width: 280px;
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.story-nudge {
+    height: 19.938rem;
+    background-color: $light3;
+}
+
+.story-nudge-text {
+    line-height: 188%;
+    font-size: 0.938rem;
+    padding: 0 9.1%;
+}
+
+.story-nudge-button {
+    margin-top: 1.563rem;
+}
+
+.popular-products-section {
+    background-color: $light2;
+    height: 40.125rem;
+}
+
+.popular-today-heading {
+    margin-bottom: 1.875rem;
+}
+
+.see-all-button {
+    margin-top: 3.125rem;
+    align-self: center;
+}
+
+.discover-categories-section {
+    width: 100%;
+    background-color: $light3;
+    padding: 6.25rem 0;
+}
+
+.discover-categories-heading {
+    width: 12.75rem;
+    margin: auto;
+}
+
+.category-details-container {
+    width: 73.3%;
+    margin: auto;
+}
+
+.home-product-category {
+    margin-top: 5.625rem;
+
+    &:first-child {
+        margin-top: 2.813rem;
+    }
+}
+
+.category-image {
+    width: 100%;
+}
+
+.category-cta {
+    margin-top: 1rem;
+}
+
+.multidimensional-category-arrow {
+    display: inline-block;
+}
+
+.category-description {
+    margin-top: 0.8rem;
+}
+
+/** Landing Page Ends**/
+
+/*! 7 - Page Specifics End**/
