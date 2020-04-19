@@ -38,7 +38,6 @@
 
 /*! 1 - Variables Begin**/
 $dark1: #2d2824;
-$dark1-trans: #66605d;
 $dark2: #211d1a;
 
 $light1: #faf7f6;
@@ -66,8 +65,9 @@ $instagram: linear-gradient(
     rgba(204, 0, 121, 0.7) 100%
 );
 
-$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 $heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
@@ -75,6 +75,8 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
     "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow",
     "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L",
     Georgia, serif;
+
+$left-right-padding-mobile: 15%;
 
 /*! 1 - Variables End**/
 
@@ -146,6 +148,10 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
 /*! 4 - Layout & Alignment Begins**/
 .display-flex {
     display: flex;
+
+    &.flex-column {
+        flex-direction: column;
+    }
 }
 
 .display-grid {
@@ -157,20 +163,20 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
     flex-direction: column;
     width: 100%;
 
-    & > .first-half {
-        @include for-tablet-landscape-up {
-            width: 50%;
-        }
-    }
-
-    & > .second-half {
-        @include for-tablet-landscape-up {
-            width: 50%;
-        }
-    }
-
     @include for-tablet-landscape-up {
         flex-direction: row;
+
+        & > .first-half {
+            @include for-tablet-landscape-up {
+                width: 50%;
+            }
+        }
+
+        & > .second-half {
+            @include for-tablet-landscape-up {
+                width: 50%;
+            }
+        }
     }
 }
 
@@ -321,6 +327,7 @@ p,
     justify-content: space-between;
     background-color: $light3;
     position: fixed;
+    z-index: 5;
     top: 0;
     width: 100%;
 
@@ -550,7 +557,7 @@ p,
 
 .story-nudge-text {
     line-height: 188%;
-    font-size: 0.938rem;
+    font-size: 0.95rem;
     padding: 0 9.1%;
 }
 
@@ -613,16 +620,114 @@ p,
     margin-top: 1rem;
 }
 
+/** multidimensional arrow is not flexed. following transform is used to position it **/
 .multidimensional-category-arrow {
-    display: inline-block;
+    transform: translateY(3.5px);
+    z-index: 1;
 }
 
 .category-description {
     margin-top: 0.8rem;
-    color: $dark1-trans;
+    opacity: 0.7;
     line-height: 176.5%;
+    font-size: 0.8rem;
 }
 
+.bespoke-section-header {
+    height: 17.063rem;
+    background-color: $dark1;
+    padding: 0 $left-right-padding-mobile;
+
+    .bespoke-section-header-text,
+    .bespoke-section-header-description {
+        color: $light3;
+    }
+}
+
+.bespoke-section-header-text {
+    margin-bottom: 2.5rem;
+    font-size: 1.75rem;
+    line-height: 160%;
+}
+
+.bespoke-section-header-description {
+    line-height: 160%;
+}
+
+.home-bespoke-half {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+}
+
+.home-bespoke-text {
+    height: 14rem;
+    padding: 0 $left-right-padding-mobile;
+    background-color: $light1;
+
+    .bespoke-product-heading-big,
+    .paragraph {
+        font-weight: normal;
+    }
+
+    .paragraph {
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+}
+
+.home-staircases-text {
+    grid-row: 2/3;
+}
+
+.bespoke-product-heading {
+    font-family: $main;
+}
+
+.bespoke-product-heading-big {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.home-staircases-image {
+    grid-row: 1/2;
+}
+
+.home-beskpoke-image-container,
+.home-bespoke-image {
+    width: 100%;
+}
+
+.bespoke-button {
+    align-self: flex-start;
+    margin-top: 1.9rem;
+}
+
+.home-review-quote-section {
+    height: 28.188rem;
+    background-color: $accent;
+    padding: 0 $left-right-padding-mobile;
+}
+
+.home-review-quote,
+.home-review-person {
+    color: $light1;
+}
+
+.home-review-quote {
+    font-size: 1.25rem;
+    font-family: $main;
+    font-weight: normal;
+    line-height: 156%;
+    margin-bottom: 2.25rem;
+    display: block;
+}
+
+.home-review-person {
+    font-family: $heading;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
 /** Landing Page Ends**/
 
 /*! 7 - Page Specifics End**/

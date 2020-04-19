@@ -71,6 +71,13 @@
   display: flex;
 }
 
+.display-flex.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .display-grid {
   display: -ms-grid;
   display: grid;
@@ -88,23 +95,23 @@
 }
 
 @media (min-width: 900px) {
-  .half-half-layout > .first-half {
-    width: 50%;
-  }
-}
-
-@media (min-width: 900px) {
-  .half-half-layout > .second-half {
-    width: 50%;
-  }
-}
-
-@media (min-width: 900px) {
   .half-half-layout {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media (min-width: 900px) and (min-width: 900px) {
+  .half-half-layout > .first-half {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) and (min-width: 900px) {
+  .half-half-layout > .second-half {
+    width: 50%;
   }
 }
 
@@ -272,6 +279,7 @@ p,
           justify-content: space-between;
   background-color: #eae4e2;
   position: fixed;
+  z-index: 5;
   top: 0;
   width: 100%;
 }
@@ -508,7 +516,7 @@ p,
 
 .story-nudge-text {
   line-height: 188%;
-  font-size: 0.938rem;
+  font-size: 0.95rem;
   padding: 0 9.1%;
 }
 
@@ -573,14 +581,122 @@ p,
   margin-top: 1rem;
 }
 
+/** multidimensional arrow is not flexed. following transform is used to position it **/
 .multidimensional-category-arrow {
-  display: inline-block;
+  -webkit-transform: translateY(3.5px);
+          transform: translateY(3.5px);
+  z-index: 1;
 }
 
 .category-description {
   margin-top: 0.8rem;
-  color: #66605d;
+  opacity: 0.7;
   line-height: 176.5%;
+  font-size: 0.8rem;
+}
+
+.bespoke-section-header {
+  height: 17.063rem;
+  background-color: #2d2824;
+  padding: 0 15%;
+}
+
+.bespoke-section-header .bespoke-section-header-text,
+.bespoke-section-header .bespoke-section-header-description {
+  color: #eae4e2;
+}
+
+.bespoke-section-header-text {
+  margin-bottom: 2.5rem;
+  font-size: 1.75rem;
+  line-height: 160%;
+}
+
+.bespoke-section-header-description {
+  line-height: 160%;
+}
+
+.home-bespoke-half {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+.home-bespoke-text {
+  height: 14rem;
+  padding: 0 15%;
+  background-color: #faf7f6;
+}
+
+.home-bespoke-text .bespoke-product-heading-big,
+.home-bespoke-text .paragraph {
+  font-weight: normal;
+}
+
+.home-bespoke-text .paragraph {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+.home-staircases-text {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
+
+.bespoke-product-heading {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.bespoke-product-heading-big {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.home-staircases-image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.home-beskpoke-image-container,
+.home-bespoke-image {
+  width: 100%;
+}
+
+.bespoke-button {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 1.9rem;
+}
+
+.home-review-quote-section {
+  height: 28.188rem;
+  background-color: #ab5033;
+  padding: 0 15%;
+}
+
+.home-review-quote,
+.home-review-person {
+  color: #faf7f6;
+}
+
+.home-review-quote {
+  font-size: 1.25rem;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
+  line-height: 156%;
+  margin-bottom: 2.25rem;
+  display: block;
+}
+
+.home-review-person {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+  font-size: 0.875rem;
 }
 
 /** Landing Page Ends**/
