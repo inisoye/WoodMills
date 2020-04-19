@@ -535,12 +535,21 @@ p,
 .discover-categories-section {
   width: 100%;
   background-color: #eae4e2;
-  padding: 6.25rem 0;
+  padding: 5rem 0;
 }
 
 .discover-categories-heading {
   width: 12.75rem;
   margin: auto;
+}
+
+.discover-categories-heading .paragraph {
+  margin-bottom: 0.625rem;
+  letter-spacing: normal;
+}
+
+.discover-categories-heading .heading-level2-big {
+  font-size: 1.8rem;
 }
 
 .category-details-container {
@@ -570,6 +579,8 @@ p,
 
 .category-description {
   margin-top: 0.8rem;
+  color: #66605d;
+  line-height: 176.5%;
 }
 
 /** Landing Page Ends**/

@@ -38,6 +38,7 @@
 
 /*! 1 - Variables Begin**/
 $dark1: #2d2824;
+$dark1-trans: #66605d;
 $dark2: #211d1a;
 
 $light1: #faf7f6;
@@ -574,12 +575,21 @@ p,
 .discover-categories-section {
     width: 100%;
     background-color: $light3;
-    padding: 6.25rem 0;
+    padding: 5rem 0;
 }
 
 .discover-categories-heading {
     width: 12.75rem;
     margin: auto;
+
+    .paragraph {
+        margin-bottom: 0.625rem;
+        letter-spacing: normal;
+    }
+
+    .heading-level2-big {
+        font-size: 1.8rem;
+    }
 }
 
 .category-details-container {
@@ -609,6 +619,8 @@ p,
 
 .category-description {
     margin-top: 0.8rem;
+    color: $dark1-trans;
+    line-height: 176.5%;
 }
 
 /** Landing Page Ends**/
