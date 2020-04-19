@@ -65,9 +65,8 @@ $instagram: linear-gradient(
     rgba(204, 0, 121, 0.7) 100%
 );
 
-$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
@@ -263,7 +262,7 @@ p,
     text-transform: capitalize;
     text-decoration: none;
     color: $light2;
-    background-color: $dark2;
+    background-color: $dark1;
     padding: 1.2rem 1.55rem;
 
     &:hover {
@@ -330,6 +329,7 @@ p,
     z-index: 5;
     top: 0;
     width: 100%;
+    border-bottom: 1px solid $light5;
 
     @include for-tablet-landscape-up {
         padding: 2.5rem 26%;
@@ -596,6 +596,7 @@ p,
 
     .heading-level2-big {
         font-size: 1.8rem;
+        // color: $dark2;
     }
 }
 
@@ -605,11 +606,7 @@ p,
 }
 
 .home-product-category {
-    margin-top: 5.625rem;
-
-    &:first-child {
-        margin-top: 2.813rem;
-    }
+    margin-top: 4rem;
 }
 
 .category-image {

@@ -218,7 +218,7 @@ p,
   text-transform: capitalize;
   text-decoration: none;
   color: #f6f2f0;
-  background-color: #211d1a;
+  background-color: #2d2824;
   padding: 1.2rem 1.55rem;
 }
 
@@ -282,6 +282,7 @@ p,
   z-index: 5;
   top: 0;
   width: 100%;
+  border-bottom: 1px solid #d7ccc8;
 }
 
 @media (min-width: 900px) {
@@ -566,11 +567,7 @@ p,
 }
 
 .home-product-category {
-  margin-top: 5.625rem;
-}
-
-.home-product-category:first-child {
-  margin-top: 2.813rem;
+  margin-top: 4rem;
 }
 
 .category-image {
