@@ -219,7 +219,7 @@ p,
   text-decoration: none;
   color: #f6f2f0;
   background-color: #2d2824;
-  padding: 1.2rem 1.55rem;
+  padding: 1.05rem 1.55rem;
 }
 
 .regular-button:hover {
@@ -235,6 +235,20 @@ p,
   color: #2d2824;
 }
 
+@media (min-width: 900px) {
+  .regular-button {
+    font-size: 1.125rem;
+  }
+}
+
+.regular-input {
+  font-size: 0.877rem;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 1.05rem 1.55rem;
+  background-color: #faf7f6;
+  border: 0;
+}
+
 .link-button {
   font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.75rem;
@@ -243,6 +257,12 @@ p,
   text-decoration: none;
   border-bottom: 2px solid #ab5033;
   padding-bottom: 0.313rem;
+}
+
+@media (min-width: 900px) {
+  .link-button {
+    font-size: 1.125rem;
+  }
 }
 
 .link-arrow-button {
@@ -287,7 +307,7 @@ p,
 
 @media (min-width: 900px) {
   .header {
-    padding: 2.5rem 26%;
+    padding: 1.625rem 3.125%;
   }
 }
 
@@ -436,8 +456,35 @@ p,
   margin-left: 0.1em;
 }
 
+.desktop-nav-list {
+  list-style: none;
+}
+
+.desktop-nav-list-item {
+  margin-right: 1.7rem;
+}
+
+.desktop-nav-list-item.no-margin {
+  margin-right: 0;
+}
+
+.desktop-nav-link {
+  text-decoration: none;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.1rem;
+}
+
+.desktop-right-nav {
+  padding-left: 2.5rem;
+}
+
 /** Header Ends **/
 /** Product Card Begins **/
+.products-with-arrows {
+  width: 100%;
+  padding-left: 8%;
+}
+
 .product-trio {
   width: 100%;
   overflow: auto;
@@ -448,7 +495,7 @@ p,
 }
 
 .full-product-card:last-child {
-  margin-right: 8%;
+  padding-right: 8%;
 }
 
 .product-card-link {
@@ -490,9 +537,151 @@ p,
 }
 
 /** Product Card Ends **/
+/** Footer Begins **/
+.footer {
+  background-color: #eae4e2;
+  text-align: center;
+}
+
+.footer-newsletter-links {
+  padding: 0 15%;
+  padding-top: 5rem;
+}
+
+.footer-newsletter-nudge .heading-level-3 {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  line-height: 109.5%;
+}
+
+.footer-newsletter-nudge .paragraph {
+  opacity: 0.7;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  line-height: 176.5%;
+}
+
+.footer-subscribe-input,
+.footer-subscribe-button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.footer-subscribe-button {
+  margin-top: 1rem;
+  width: 13.558rem;
+}
+
+.footer-links-container {
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  row-gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5rem 0;
+}
+
+.footer-links-group li {
+  list-style-type: none;
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links-group li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-link-heading,
+.footer-link,
+.social-link {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.footer-link-heading {
+  opacity: 0.5;
+  font-size: 1.1rem;
+}
+
+.footer-link {
+  font-size: 0.95rem;
+}
+
+.social-links-container {
+  -webkit-transform: translateX(-7px);
+          transform: translateX(-7px);
+}
+
+.social-svg {
+  height: 1.7rem;
+}
+
+.social-link {
+  margin-right: 0.4em;
+}
+
+.social-link:last-child {
+  margin-right: 0;
+}
+
+.footer-site-credits {
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+}
+
+.footer-site-credits-no-decor {
+  padding: 3.438rem 4%;
+  background-color: #d7ccc8;
+  color: #faf7f6;
+}
+
+.footer-logo-icon {
+  height: 3.125rem;
+  width: 3.125rem;
+}
+
+.footer-credit-text {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #faf7f6;
+  font-size: 0.85rem;
+  line-height: 185%;
+}
+
+.footer-credit-1 {
+  margin-top: 1.563rem;
+}
+
+.footer-credit-4 {
+  display: block;
+}
+
+.footer-decor-div-1 {
+  height: 2.188rem;
+  background-color: #826b64;
+  opacity: 0.6;
+}
+
+.footer-decor-div-2 {
+  height: 0.938rem;
+  background-color: #826b64;
+}
+
+/** Footer Ends **/
 /*! 6 - Modules End**/
 /*! 7 - Page Specifics Begin**/
 /** Landing Page Begins **/
+.hero {
+  background-color: #d7ccc8;
+}
+
 .hero-text {
   height: 22rem;
   background-color: #d7ccc8;
@@ -502,17 +691,67 @@ p,
   margin-top: 2.5rem;
 }
 
+@media (min-width: 900px) {
+  .hero-text .regular-button {
+    margin-top: 3.125rem;
+  }
+}
+
 .home-main-text {
   width: 280px;
+}
+
+@media (min-width: 900px) {
+  .home-main-text {
+    width: 388px;
+  }
+}
+
+@media (min-width: 900px) {
+  .home-main-text .home-main-text-s {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .home-main-text .home-main-text-l {
+    font-size: 2.95rem;
+  }
 }
 
 .hero-image {
   width: 100%;
 }
 
-.story-nudge {
-  height: 19.938rem;
+.scroll-and-story-nudge {
   background-color: #eae4e2;
+  position: relative;
+}
+
+.scroll-nudge {
+  position: absolute;
+  right: 2.5rem;
+  top: 1.25rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.scroll-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.688rem;
+}
+
+.story-nudge {
+  padding: 4.813rem 0;
+  background-color: #eae4e2;
+}
+
+@media (min-width: 900px) {
+  .story-nudge {
+    padding: 4rem 0;
+  }
 }
 
 .story-nudge-text {
@@ -521,8 +760,22 @@ p,
   padding: 0 9.1%;
 }
 
+@media (min-width: 900px) {
+  .story-nudge-text {
+    font-size: 1.25rem;
+    padding: 0 14.8%;
+  }
+}
+
 .story-nudge-button {
   margin-top: 1.563rem;
+}
+
+@media (min-width: 900px) {
+  .story-nudge-button {
+    margin-top: 2.375rem;
+    font-size: 1rem;
+  }
 }
 
 .popular-products-section {
@@ -671,9 +924,8 @@ p,
 }
 
 .home-review-quote-section {
-  height: 28.188rem;
   background-color: #ab5033;
-  padding: 0 15%;
+  padding: 4.688rem 15%;
 }
 
 .home-review-quote,
@@ -694,6 +946,95 @@ p,
   font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-transform: uppercase;
   font-size: 0.875rem;
+}
+
+.home-services-section {
+  background-color: #ddd4d0;
+}
+
+.home-services-header {
+  padding: 6.125rem 0 6.125rem;
+}
+
+.home-services-header .paragraph {
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 176.5%;
+  opacity: 0.7;
+  margin: 0.6rem 13.6% 1.5rem;
+}
+
+.home-services-header .heading-level2-big {
+  font-size: 1.8rem;
+}
+
+.home-services-header .regular-button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.services-cards-with-arrows {
+  padding-left: 8%;
+  width: 100%;
+  padding-bottom: 6.125rem;
+}
+
+.services-cards-container {
+  width: 100%;
+  overflow: auto;
+}
+
+.home-service-card {
+  margin-right: 1.5rem;
+}
+
+.home-service-card:last-child {
+  padding-right: 8%;
+}
+
+.service-title {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.service-image {
+  width: 15rem;
+}
+
+.service-description {
+  font-size: 0.75rem;
+  line-height: 176.5%;
+  margin-top: 0.813rem;
+}
+
+.home-projects-nudge-image {
+  width: 100%;
+}
+
+.home-projects-nudge-text {
+  line-height: 109.5%;
+  font-size: 1.5rem;
+  padding: 6.25rem 15%;
+  background-color: #2d2824;
+}
+
+.home-projects-nudge-text .heading-level2-big,
+.home-projects-nudge-text .paragraph {
+  color: #faf7f6;
+}
+
+.home-projects-nudge-text .heading-level2-big {
+  margin-bottom: 1.25rem;
+}
+
+.home-projects-nudge-text .paragraph {
+  letter-spacing: normal;
+  font-size: 0.938rem;
+  line-height: 176.5%;
+  margin-bottom: 3.125rem;
 }
 
 /** Landing Page Ends**/
