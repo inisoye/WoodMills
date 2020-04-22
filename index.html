@@ -201,7 +201,9 @@
           </svg>
         </a>
 
-        <div class="desktop-right-nav-and-cart display-flex">
+        <div
+          class="desktop-right-nav-and-cart display-flex vertically-center-content"
+        >
           <nav class="desktop-right-nav desktop-nav desktop-only">
             <ul class="desktop-nav-list display-flex">
               <li class="desktop-nav-list-item">
@@ -326,8 +328,9 @@
             Popular Today
           </h2>
           <div class="products-with-arrows">
-            <button class="right-arrow-button desktop-only">
+            <button class="left-arrow-button desktop-only">
               <svg
+                class="left-arrow-button-icon"
                 width="51"
                 height="51"
                 viewBox="0 0 51 51"
@@ -350,7 +353,9 @@
                 />
               </svg>
             </button>
-            <div class="product-trio home-product-showcase display-flex">
+            <div
+              class="products-without-arrows home-product-showcase display-flex"
+            >
               <div class="full-product-card">
                 <a href="" class="product-card-link">
                   <div
@@ -384,6 +389,41 @@
                     Softie Pillows
                   </p>
                   <p class="product-price">₦10,000</p>
+                </a>
+              </div>
+
+              <div class="full-product-card">
+                <a href="" class="product-card-link">
+                  <div
+                    class="product-bg vertically-center-content horizontally-center-content"
+                  >
+                    <img
+                      class="product-image"
+                      src="images/products/curved-hind-chair.png"
+                      alt="upright three-row wooden cabinet"
+                    />
+                  </div>
+                  <p class="product-name">
+                    Curved Hind Chair
+                  </p>
+                  <p class="product-price">₦70,000</p>
+                </a>
+              </div>
+              <div class="full-product-card">
+                <a href="" class="product-card-link">
+                  <div
+                    class="product-bg vertically-center-content horizontally-center-content"
+                  >
+                    <img
+                      class="product-image"
+                      src="images/products/curved-hind-chair.png"
+                      alt="upright three-row wooden cabinet"
+                    />
+                  </div>
+                  <p class="product-name">
+                    Curved Hind Chair
+                  </p>
+                  <p class="product-price">₦70,000</p>
                 </a>
               </div>
 
@@ -444,202 +484,223 @@
             ><span class="heading-level2-big">Product Categories</span>
           </h2>
 
-          <div class="quad-grid-layout category-details-container">
-            <a href="#" class="home-product-category home-flooring-category">
-              <h4 class="desktop-only category-title">
-                Wood Flooring
-              </h4>
-              <img
-                class="category-image"
-                src="images/home-floors.jpg"
-                alt="close up of a wooden floor"
-              />
-              <a
-                href=""
-                class="category-cta link-arrow-button display-flex vertically-center-content"
-              >
-                <span
-                  class="mobile-only category-cta-text link-arrow-button-text syne"
-                >
-                  Wood Flooring</span
-                ><span
-                  class="desktop-only category-cta-text link-arrow-button-text syne"
-                >
-                  Shop Floors</span
-                ><svg
-                  class="category-cta-arrow link-arrow-button-icon"
-                  width="51"
-                  height="51"
-                  viewBox="0 0 51 51"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.4403 25.252H39.6732"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+          <div class="category-details-container">
+            <div class="home-flooring-category-div">
+              <a href="#" class="home-product-category home-flooring-category">
+                <h4 class="desktop-only category-title center-align-text">
+                  Wood Flooring
+                </h4>
+                <div class="category-image-wrapper">
+                  <img
+                    class="category-image"
+                    src="images/home-floors.jpg"
+                    alt="close up of a wooden floor"
                   />
-                  <path
-                    d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                </div>
+                <a
+                  href=""
+                  class="category-cta link-arrow-button display-flex vertically-center-content"
+                >
+                  <span
+                    class="mobile-only category-cta-text link-arrow-button-text syne"
+                  >
+                    Wood Flooring</span
+                  ><span
+                    class="desktop-only category-cta-text link-arrow-button-text syne"
+                  >
+                    Shop Floors</span
+                  ><svg
+                    class="category-cta-arrow link-arrow-button-icon"
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.4403 25.252H39.6732"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <p class="category-description">
+                  Premium parquet and laminate floors that bring character and
+                  beauty into any space.
+                </p>
               </a>
-              <p class="category-description">
-                Premium parquet and laminate floors that bring character and
-                beauty into any space.
-              </p>
-            </a>
+            </div>
 
-            <a href="#" class="home-product-category home-doors-category">
-              <h4 class="desktop-only category-title">Doors</h4>
-              <img
-                class="category-image"
-                src="images/home-doors.jpg"
-                alt="two wooden doors with metal handles"
-              />
-              <a
-                href=""
-                class="category-cta link-arrow-button display-flex vertically-center-content"
-              >
-                <span
-                  class="mobile-only category-cta-text link-arrow-button-text syne"
-                  >Doors</span
-                ><span
-                  class="desktop-only category-cta-text link-arrow-button-text syne"
-                  >Shop Doors</span
-                ><svg
-                  class="category-cta-arrow link-arrow-button-icon"
-                  width="51"
-                  height="51"
-                  viewBox="0 0 51 51"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="home-doors-category-div">
+              <a href="#" class="home-product-category home-doors-category">
+                <h4 class="desktop-only category-title center-align-text">
+                  Doors
+                </h4>
+                <div class="category-image-wrapper">
+                  <img
+                    class="category-image"
+                    src="images/home-doors.jpg"
+                    alt="two wooden doors with metal handles"
+                  />
+                </div>
+                <a
+                  href=""
+                  class="category-cta link-arrow-button display-flex vertically-center-content"
                 >
-                  <path
-                    d="M10.4403 25.252H39.6732"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                  <span
+                    class="mobile-only category-cta-text link-arrow-button-text syne"
+                    >Doors</span
+                  ><span
+                    class="desktop-only category-cta-text link-arrow-button-text syne"
+                    >Shop Doors</span
+                  ><svg
+                    class="category-cta-arrow link-arrow-button-icon"
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.4403 25.252H39.6732"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <p class="category-description">
+                  Make the best out of any opening with our premium weather
+                  resistant doors.
+                </p>
               </a>
-              <p class="category-description">
-                Make the best out of any opening with our premium weather
-                resistant doors.
-              </p>
-            </a>
+            </div>
 
-            <a href="#" class="home-product-category home-furniture-category">
-              <h4 class="desktop-only category-title">
-                Furniture
-              </h4>
-              <img
-                class="category-image"
-                src="images/home-furniture.jpg"
-                alt="room with wooden floors and modern furniture"
-              />
-              <a
-                href=""
-                class="category-cta link-arrow-button display-flex vertically-center-content"
-              >
-                <span
-                  class="mobile-only category-cta-text link-arrow-button-text syne"
-                  >Furniture</span
-                ><span
-                  class="desktop-only category-cta-text link-arrow-button-text syne"
-                  >Shop Furniture</span
-                ><svg
-                  class="category-cta-arrow link-arrow-button-icon"
-                  width="51"
-                  height="51"
-                  viewBox="0 0 51 51"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="home-furniture-category-div">
+              <a href="#" class="home-product-category home-furniture-category">
+                <h4 class="desktop-only category-title center-align-text">
+                  Furniture
+                </h4>
+                <div class="category-image-wrapper">
+                  <img
+                    class="category-image"
+                    src="images/home-furniture.jpg"
+                    alt="room with wooden floors and modern furniture"
+                  />
+                </div>
+                <a
+                  href=""
+                  class="category-cta link-arrow-button display-flex vertically-center-content"
                 >
-                  <path
-                    d="M10.4403 25.252H39.6732"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                  <span
+                    class="mobile-only category-cta-text link-arrow-button-text syne"
+                    >Furniture</span
+                  ><span
+                    class="desktop-only category-cta-text link-arrow-button-text syne"
+                    >Shop Furniture</span
+                  ><svg
+                    class="category-cta-arrow link-arrow-button-icon"
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.4403 25.252H39.6732"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <p class="category-description">
+                  Turn your rooms into cozy havens with our rigorously curated
+                  furniture pieces.
+                </p>
               </a>
-              <p class="category-description">
-                Turn your rooms into cozy havens with our rigorously curated
-                furniture pieces.
-              </p>
-            </a>
+            </div>
 
-            <a
-              href="#"
-              class="home-product-category home-multidimensional-category"
-            >
-              <h4 class="desktop-only category-title">
-                Multidimensional Wood Products
-              </h4>
-              <img
-                class="category-image"
-                src="images/home-pallets.jpg"
-                alt="stacked industrial pallets"
-              />
-              <a href="" class="category-cta link-arrow-button">
-                <span
-                  class="mobile-only home-multidimensional-category-text category-cta-text link-arrow-button-text syne"
-                  >Multidimensional Wood Products</span
-                ><span
-                  class="desktop-only category-cta-text link-arrow-button-text syne"
-                  >Shop</span
-                ><svg
-                  class="category-cta-arrow multidimensional-category-arrow link-arrow-button-icon"
-                  width="51"
-                  height="51"
-                  viewBox="0 0 51 51"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+            <div class="home-multidimensional-category-div">
+              <a
+                href="#"
+                class="home-product-category home-multidimensional-category"
+              >
+                <h4 class="desktop-only category-title center-align-text">
+                  Multidimensional Products
+                </h4>
+                <div class="category-image-wrapper">
+                  <img
+                    class="category-image"
+                    src="images/home-pallets.jpg"
+                    alt="stacked industrial pallets"
+                  />
+                </div>
+                <a
+                  href=""
+                  class="category-cta multidimensional-category-cta link-arrow-button"
                 >
-                  <path
-                    d="M10.4403 25.252H39.6732"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
-                    stroke="#F6F2F0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+                  <span
+                    class="mobile-only home-multidimensional-category-text category-cta-text link-arrow-button-text syne"
+                    >Multidimensional Wood Products</span
+                  ><span
+                    class="desktop-only category-cta-text link-arrow-button-text syne"
+                    >Shop</span
+                  ><svg
+                    class="category-cta-arrow multidimensional-category-arrow link-arrow-button-icon"
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.4403 25.252H39.6732"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M25.0569 10.5218L39.6734 25.2522L25.0569 39.9826"
+                      stroke="#F6F2F0"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <p class="category-description">
+                  From sturdy pallets to fruit harvest baskets, we sell a unique
+                  range of products that cut across numerous usecases.
+                </p>
               </a>
-              <p class="category-description">
-                From sturdy pallets to room dividers, we sell a unique range of
-                products that cut across numerous usecases.
-              </p>
-            </a>
+            </div>
           </div>
         </section>
 
@@ -660,7 +721,7 @@
             class="half-half-layout home-bespoke-half home-staircases-section"
           >
             <div
-              class="first-half home-bespoke-text horizontally-center-content flex-column home-staircases-text"
+              class="first-half home-bespoke-text horizontally-center-content flex-column home-staircases-text full-width"
             >
               <h3 class="bespoke-product-heading">
                 <span class="bespoke-product-heading-big">Staircases</span>
@@ -670,32 +731,25 @@
               </h3>
               <a href="#" class="link-button bespoke-button">See More</a>
             </div>
-            <div
-              class="second-half home-beskpoke-image-container home-staircases-image"
-            >
-              <img
-                class="home-bespoke-image"
-                src="/images/home-staircases.jpg"
-                alt="wooden-tiled staircases"
-              />
-            </div>
+
+            <img
+              class="second-half home-bespoke-image home-staircases-image full-width"
+              src="/images/home-staircases.jpg"
+              alt="wooden-tiled staircases"
+            />
           </section>
 
           <section
             class="half-half-layout home-bespoke-half home-cabinets-section"
           >
-            <div
-              class="first-half home-beskpoke-image-container home-cabinets-image"
-            >
-              <img
-                class="home-bespoke-image"
-                src="/images/home-cabinets.jpg"
-                alt="styling kitchen with wooden cabinets"
-              />
-            </div>
+            <img
+              class="first-half home-bespoke-image home-cabinets-image full-width"
+              src="/images/home-cabinets.jpg"
+              alt="styling kitchen with wooden cabinets"
+            />
 
             <div
-              class="second-half home-bespoke-text horizontally-center-content flex-column home-cabinets-text"
+              class="second-half home-bespoke-text horizontally-center-content flex-column home-cabinets-text full-width"
             >
               <h3 class="bespoke-product-heading">
                 <span class="bespoke-product-heading-big"
@@ -733,7 +787,7 @@
                 >Our Services</span
               >
               <span class="paragraph">
-                In addition to manufacturing high quality products, we also
+                In addition to selling high quality products, we also
                 provide a number of services.</span
               >
             </h2>
@@ -741,7 +795,7 @@
           </header>
 
           <div class="services-cards-with-arrows">
-            <button class="left-arrow-button desktop-only">
+            <button class="left-arrow-button arrow-button desktop-only">
               <svg
                 class="left-arrow-button-icon"
                 width="51"
@@ -822,7 +876,7 @@
                 </p>
               </section>
             </div>
-            <button class="right-arrow-button desktop-only">
+            <button class="right-arrow-button arrow-button desktop-only">
               <svg
                 class="right-arrow-button-icon"
                 width="51"
@@ -875,7 +929,7 @@
       </main>
 
       <footer class="footer">
-        <section class="footer-newsletter-links">
+        <section class="footer-newsletter-and-links">
           <div class="footer-newsletter-nudge">
             <h3 class="heading-level-3">
               Subscribe for Our Newsletter
@@ -885,7 +939,7 @@
               wonderful deals from Wood Mills.
             </p>
             <div
-              class="subscribe-input-button display-flex flex-column center-align-text"
+              class="subscribe-input-button-container display-flex flex-column center-align-text"
             >
               <input
                 class="regular-input footer-subscribe-input center-align-text"
