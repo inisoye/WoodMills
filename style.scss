@@ -3,10 +3,10 @@
   font-style: normal;
   font-weight: bold;
   src: local("Syne-Bold"),
-    url("/fonts/Syne-Bold.woff2") format("woff2") /* will be preloaded */,
-    url("/fonts/Syne-Bold.woff") format("woff"),
-    url("/fonts/Syne-Bold.ttf") format("truetype"),
-    url("/fonts/Syne-Bold.eot") format("embedded-opentype");
+    url("fonts/Syne-Bold.woff2") format("woff2") /* will be preloaded */,
+    url("fonts/Syne-Bold.woff") format("woff"),
+    url("fonts/Syne-Bold.ttf") format("truetype"),
+    url("fonts/Syne-Bold.eot") format("embedded-opentype");
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
@@ -15,11 +15,11 @@
   font-style: normal;
   font-weight: 400;
   src: local("basiersquare-regular-webfont"),
-    url("/fonts/basiersquare-regular-webfont.woff2") format("woff2")
+    url("fonts/basiersquare-regular-webfont.woff2") format("woff2")
       /* will be preloaded */,
-    url("/fonts/basiersquare-regular-webfont.woff") format("woff"),
-    url("/fonts/basiersquare-regular-webfont.ttf") format("truetype"),
-    url("/fonts/basiersquare-regular-webfont.eot") format("embedded-opentype");
+    url("fonts/basiersquare-regular-webfont.woff") format("woff"),
+    url("fonts/basiersquare-regular-webfont.ttf") format("truetype"),
+    url("fonts/basiersquare-regular-webfont.eot") format("embedded-opentype");
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
@@ -37,7 +37,9 @@
 
 /*! 1 - Variables Begin**/
 $dark1: #2d2824;
+$dark1: #332d29;
 $dark2: #211d1a;
+$dark3: #5d5956;
 
 $light1: #faf7f6;
 $light2: #f6f2f0;
@@ -77,7 +79,6 @@ $serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
 $left-right-padding-mobile: 15%;
 $left-right-header-footer-padding-mobile: 4%;
 $left-right-header-footer-padding-desktop: 3.125%;
-
 /*! 1 - Variables End**/
 
 /*! 2 - Normalize Begins**/
@@ -87,7 +88,6 @@ $left-right-header-footer-padding-desktop: 3.125%;
   box-sizing: border-box;
   color: $dark1;
 }
-
 /*! 2 - Normalize Ends**/
 
 /*! 2b - Media Query Breakpoints Begin**/
@@ -96,31 +96,37 @@ $left-right-header-footer-padding-desktop: 3.125%;
     @content;
   }
 }
+
 @mixin for-tablet-portrait-up {
   @media (min-width: 600px) {
     @content;
   }
 }
+
 @mixin for-tablet-landscape-down {
-  @media (max-width: 900px) {
+  @media (max-width: 899px) {
     @content;
   }
 }
+
 @mixin for-tablet-landscape-up {
   @media (min-width: 900px) {
     @content;
   }
 }
+
 @mixin for-desktop-up {
   @media (min-width: 1200px) {
     @content;
   }
 }
+
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) {
     @content;
   }
 }
+
 @mixin for-intermediate-screens {
   @media (min-width: 900px) and (max-width: 1154px) {
     @content;
@@ -136,22 +142,26 @@ html {
   }
 }
 
+a:hover {
+  color: $accent;
+}
+
 /** Defualt scrollbar styling **/
 .body-wrap {
   * {
     //* scrollbar styling begins
     ::-webkit-scrollbar {
-      height: 6px;
+      height: 4.5px;
       width: 10px;
-      background-color: $light1;
+      background-color: #ffffff;
     }
 
     ::-webkit-scrollbar-track {
-      background-color: $light1;
+      background-color: #ffffff;
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: $dark1;
+      background-color: $medium1;
     }
     //* scrollbar styling ends
   }
@@ -177,9 +187,21 @@ html {
 .push-below-header {
   margin-top: 5.488rem;
 
+  @include for-tablet-landscape-up {
+    margin-top: 5.688rem;
+  }
+
   @include for-intermediate-screens {
     margin-top: 5.25rem;
   }
+}
+
+.transparent-bg {
+  background-color: transparent;
+}
+
+.full-width {
+  width: 100%;
 }
 /*! 3 - Defaults End**/
 
@@ -253,15 +275,38 @@ html {
 /*! 4 - Layout & Alignment Ends**/
 
 /*! 5 - Typography Begins**/
+.heading-giant {
+  font-family: $serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 5.375rem;
+  letter-spacing: -0.05em;
+  line-height: 96.3%;
+
+  @include for-tablet-landscape-up {
+    font-size: 10rem;
+  }
+}
+
 .heading-level-1 {
   font-size: 2.15rem;
   font-family: $heading;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: -0.025em;
   line-height: 109.5%;
 
+  @include for-tablet-landscape-up {
+    font-size: 2.95rem;
+  }
+
+  @include for-intermediate-screens {
+    font-size: 2.55rem;
+  }
+
   .home-main-text-s {
     font-size: 0.9rem;
+    font-weight: normal;
     text-transform: capitalize;
     letter-spacing: normal;
     display: block;
@@ -288,11 +333,23 @@ html {
   }
 }
 
+.heading-level-small {
+  font-size: 1.1rem;
+  font-family: $heading;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.875rem;
+  }
+}
+
 p,
 .paragraph {
   font-size: 0.9rem;
   font-family: $main;
   text-transform: none;
+  line-height: 188%;
 
   @include for-tablet-landscape-up {
     font-size: 1.1rem;
@@ -313,6 +370,7 @@ p,
 
   &:hover {
     cursor: pointer;
+    color: $light2;
   }
 
   &.orange-regular-button {
@@ -380,6 +438,26 @@ p,
   }
 }
 
+.blob {
+  position: absolute;
+  width: 80vw;
+  animation: blobAnimation 40s linear infinite alternate;
+}
+
+@keyframes blobAnimation {
+  0% {
+    width: 150vw;
+  }
+
+  50% {
+    width: 70vw;
+  }
+
+  100% {
+    width: 150vw;
+  }
+}
+
 /** Large Modules**/
 
 /** Header Begins **/
@@ -392,6 +470,11 @@ p,
   top: 0;
   width: 100%;
   border-bottom: 1px solid $light5;
+
+  /** Resets transparency setting **/
+  &.tranparent-bg {
+    background-color: transparent;
+  }
 
   @include for-tablet-landscape-up {
     padding: 1.1rem $left-right-header-footer-padding-desktop;
@@ -409,7 +492,6 @@ p,
 }
 
 .mobile-nav-check {
-  background-color: yellow;
   display: block;
   height: 27px;
   width: 47px;
@@ -520,6 +602,10 @@ p,
 .logo-text-svg {
   margin-top: 0.3rem;
 
+  @include for-intermediate-screens {
+    width: 11rem;
+  }
+
   @include for-tablet-landscape-down {
     width: 9rem;
   }
@@ -562,7 +648,7 @@ p,
 }
 /** Header Ends **/
 
-/** Product Card Begins **/
+/** Product Card(s) Begin(s) **/
 .products-with-arrows {
   width: 100%;
   padding-left: 8%;
@@ -571,7 +657,6 @@ p,
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
-    justify-content: center;
     align-items: center;
     column-gap: 2.34%;
     padding-left: 0;
@@ -624,7 +709,7 @@ p,
   transition: all 1s ease;
 
   &:hover {
-    background-color: $light4;
+    background-color: $light5;
   }
 
   @include for-tablet-landscape-up {
@@ -697,7 +782,7 @@ p,
   padding-top: 5rem;
 
   @include for-tablet-landscape-up {
-    padding: 7.5em 0 7.5em 3.75rem;
+    padding: 7.5em 0 7.5em $left-right-header-footer-padding-desktop;
     width: 70%;
   }
 }
@@ -720,7 +805,7 @@ p,
   .paragraph {
     opacity: 0.7;
     margin: 1rem 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     line-height: 176.5%;
 
     @include for-tablet-landscape-up {
@@ -840,8 +925,8 @@ p,
   grid-template-rows: auto auto auto;
 
   @include for-tablet-landscape-up {
-    width: 30%;
-    grid-template-columns: 85% 10% 5%;
+    width: 40%;
+    grid-template-columns: 90% 7% 3%;
     grid-template-rows: auto;
   }
 }
@@ -853,7 +938,7 @@ p,
 
   @include for-tablet-landscape-up {
     padding: 0;
-    padding-bottom: 7.5em;
+    padding-bottom: 8em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -909,6 +994,7 @@ p,
     height: 100%;
   }
 }
+
 /** Footer Ends **/
 
 /*! 6 - Modules End**/
@@ -940,14 +1026,9 @@ p,
   }
 
   .home-main-text-s {
-    // @media (min-width: 1154px) {
-    //   font-size: 1.35rem;
-    //   margin-bottom: 1rem;
-    // }
-
     @include for-tablet-landscape-up {
       font-size: 1.35rem;
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
     }
 
     @include for-intermediate-screens {
@@ -957,10 +1038,6 @@ p,
   }
 
   .home-main-text-l {
-    // @media (min-width: 1154px) {
-    //   font-size: 2.95rem;
-    // }
-
     @include for-tablet-landscape-up {
       font-size: 2.95rem;
     }
@@ -1158,13 +1235,13 @@ p,
 
 .category-description {
   margin-top: 0.8rem;
-  opacity: 0.7;
+  color: $dark3;
   line-height: 176.5%;
   font-size: 0.8rem;
 
   @include for-tablet-landscape-up {
     font-size: 1.1rem;
-    color: $medium2;
+    color: $medium1;
   }
 }
 
@@ -1269,6 +1346,7 @@ p,
 .bespoke-product-heading-big {
   display: block;
   margin-bottom: 0.5rem;
+  font-family: $heading;
 
   @include for-tablet-landscape-up {
     font-size: 1.77rem;
@@ -1496,6 +1574,10 @@ p,
     padding: 0 10%;
   }
 
+  @include for-intermediate-screens {
+    padding: 0 7%;
+  }
+
   .heading-level2-big,
   .paragraph {
     color: $light3;
@@ -1506,8 +1588,12 @@ p,
     line-height: 109.5%;
 
     @include for-tablet-landscape-up {
-      font-size: 2rem;
+      font-size: 2.23rem;
       margin-bottom: 1.875rem;
+    }
+
+    @include for-intermediate-screens {
+      font-size: 2rem;
     }
   }
 
@@ -1525,5 +1611,275 @@ p,
   }
 }
 /** Landing Page Ends**/
+
+/** Our Story Page Begins **/
+.transparent-bg {
+  background-color: transparent;
+}
+
+@include for-tablet-landscape-up {
+  .our-story-header {
+    background-color: transparent;
+    border-bottom: 0;
+  }
+}
+
+.our-story-hero {
+  position: relative;
+}
+
+.our-story-hero-text {
+  position: absolute;
+  color: $light3;
+  width: 100%;
+  padding: 0 10%;
+
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
+
+  @include for-tablet-landscape-down {
+    bottom: 20%;
+  }
+
+  @include for-tablet-landscape-up {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.mission-text-container {
+  background-color: $light4;
+  padding: 3.5rem $left-right-padding-mobile;
+  margin: 4rem 0rem;
+  line-height: 188%;
+
+  @include for-tablet-landscape-up {
+    padding: 5.25rem $left-right-padding-mobile;
+    margin: 8.75rem 0rem;
+  }
+
+  .center-align-text {
+    margin: auto;
+
+    @include for-tablet-portrait-up {
+      max-width: 70%;
+    }
+  }
+
+  .heading-level-small {
+    margin-bottom: 1rem;
+
+    @include for-tablet-landscape-up {
+      margin-bottom: 1.625rem;
+    }
+  }
+}
+
+.mission-history-facilities-text {
+  @include for-tablet-landscape-up {
+    font-size: 1.5rem;
+  }
+}
+
+.our-story-scatter-columns-container {
+  @include for-tablet-landscape-up {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    flex: 50% 50%;
+  }
+}
+
+.our-story-scatter-column {
+  padding: 0 10%;
+
+  @include for-tablet-landscape-up {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+  }
+
+  .our-story-scatter-img {
+    display: block;
+    margin: 3.5rem auto;
+    width: 100%;
+
+    @include for-tablet-landscape-up {
+      margin: 7rem auto;
+    }
+
+    &.left-column-scatter-img {
+      @include for-tablet-landscape-up {
+        margin: 8rem auto;
+      }
+    }
+
+    &.desktop-only {
+      display: none;
+
+      @include for-tablet-landscape-up {
+        display: block;
+      }
+    }
+  }
+}
+
+.facilities-history-heading {
+  margin-bottom: 1rem;
+}
+
+.image-break-wood-stack {
+  margin: 3.5rem 0;
+
+  @include for-tablet-landscape-up {
+    margin: 8rem 0 6rem;
+  }
+}
+
+.why-wood-mills {
+  position: relative;
+  overflow: hidden;
+
+  @include for-tablet-landscape-up {
+    padding: 0 14.45%;
+  }
+}
+
+.our-story-blob {
+  @include for-tablet-landscape-up {
+    display: none;
+  }
+}
+
+.blob-1 {
+  top: 0;
+  left: 0;
+}
+
+.blob-2 {
+  bottom: 0;
+  right: 0;
+}
+
+.why-wood-mills-subgroup {
+  margin: 5.5rem auto;
+  flex-direction: column-reverse;
+
+  @include for-tablet-landscape-up {
+    margin: 11.25rem auto;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+
+    &:first-of-type {
+      margin-top: 6rem;
+    }
+
+    &.facilities-subgroup {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.why-wood-mills-illustration {
+  display: block;
+
+  &.manufacturers-illustration {
+    width: 90px;
+    height: 70px;
+
+    @include for-tablet-landscape-up {
+      width: 202px;
+      height: 149.83px;
+    }
+  }
+
+  &.facilities-ilustration {
+    width: 100px;
+    height: 60px;
+
+    @include for-tablet-landscape-up {
+      width: 230px;
+      height: 118.91px;
+    }
+  }
+
+  &.timber-illustration {
+    width: 140px;
+    height: 55px;
+
+    @include for-tablet-landscape-up {
+      width: 299.95px;
+      height: 88.98px;
+    }
+  }
+}
+
+.why-wood-mills-group-text {
+  padding: 1.6rem $left-right-padding-mobile 0;
+
+  @include for-tablet-landscape-up {
+    padding: 0;
+    width: 60%;
+  }
+
+  .heading-level-small {
+    margin-bottom: 0.5rem;
+
+    @include for-tablet-landscape-up {
+      font-size: 1.5rem;
+    }
+  }
+
+  .why-wood-mills-paragraph {
+    @include for-tablet-landscape-up {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.custom-products-nudge {
+  position: relative;
+}
+
+.custom-products-image {
+  display: block;
+}
+
+.custom-products-nudge-text {
+  padding: 0 $left-right-padding-mobile;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include for-tablet-landscape-up {
+    margin: auto;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.custom-products-nudge-heading {
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
+}
+
+.custom-products-nudge-paragraph {
+  margin-bottom: 3rem;
+  margin-top: 0.5rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.25rem;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    max-width: 33.438rem;
+  }
+}
+
+/** Our Story Page Ends  **/
 
 /*! 7 - Page Specifics End**/

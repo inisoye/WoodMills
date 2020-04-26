@@ -2,7 +2,7 @@
   font-family: "Syne";
   font-style: normal;
   font-weight: bold;
-  src: local("Syne-Bold"), url("/fonts/Syne-Bold.woff2") format("woff2"), url("/fonts/Syne-Bold.woff") format("woff"), url("/fonts/Syne-Bold.ttf") format("truetype"), url("/fonts/Syne-Bold.eot") format("embedded-opentype");
+  src: local("Syne-Bold"), url("fonts/Syne-Bold.woff2") format("woff2"), url("fonts/Syne-Bold.woff") format("woff"), url("fonts/Syne-Bold.ttf") format("truetype"), url("fonts/Syne-Bold.eot") format("embedded-opentype");
   unicode-range: U+000-5FF;
   /* Latin glyphs */
 }
@@ -11,7 +11,7 @@
   font-family: "Basier";
   font-style: normal;
   font-weight: 400;
-  src: local("basiersquare-regular-webfont"), url("/fonts/basiersquare-regular-webfont.woff2") format("woff2"), url("/fonts/basiersquare-regular-webfont.woff") format("woff"), url("/fonts/basiersquare-regular-webfont.ttf") format("truetype"), url("/fonts/basiersquare-regular-webfont.eot") format("embedded-opentype");
+  src: local("basiersquare-regular-webfont"), url("fonts/basiersquare-regular-webfont.woff2") format("woff2"), url("fonts/basiersquare-regular-webfont.woff") format("woff"), url("fonts/basiersquare-regular-webfont.ttf") format("truetype"), url("fonts/basiersquare-regular-webfont.eot") format("embedded-opentype");
   unicode-range: U+000-5FF;
   /* Latin glyphs */
 }
@@ -35,7 +35,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #2d2824;
+  color: #332d29;
 }
 
 /*! 2 - Normalize Ends**/
@@ -52,19 +52,23 @@ html {
   }
 }
 
+a:hover {
+  color: #ab5033;
+}
+
 /** Defualt scrollbar styling **/
 .body-wrap * ::-webkit-scrollbar {
-  height: 6px;
+  height: 4.5px;
   width: 10px;
-  background-color: #faf7f6;
+  background-color: #ffffff;
 }
 
 .body-wrap * ::-webkit-scrollbar-track {
-  background-color: #faf7f6;
+  background-color: #ffffff;
 }
 
 .body-wrap * ::-webkit-scrollbar-thumb {
-  background-color: #2d2824;
+  background-color: #826b64;
 }
 
 .hide-by-default,
@@ -78,7 +82,7 @@ html {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
   .desktop-only {
     display: none;
   }
@@ -88,10 +92,24 @@ html {
   margin-top: 5.488rem;
 }
 
+@media (min-width: 900px) {
+  .push-below-header {
+    margin-top: 5.688rem;
+  }
+}
+
 @media (min-width: 900px) and (max-width: 1154px) {
   .push-below-header {
     margin-top: 5.25rem;
   }
+}
+
+.transparent-bg {
+  background-color: transparent;
+}
+
+.full-width {
+  width: 100%;
 }
 
 /*! 3 - Defaults End**/
@@ -202,16 +220,45 @@ html {
 
 /*! 4 - Layout & Alignment Ends**/
 /*! 5 - Typography Begins**/
+.heading-giant {
+  font-family: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 5.375rem;
+  letter-spacing: -0.05em;
+  line-height: 96.3%;
+}
+
+@media (min-width: 900px) {
+  .heading-giant {
+    font-size: 10rem;
+  }
+}
+
 .heading-level-1 {
   font-size: 2.15rem;
   font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: -0.025em;
   line-height: 109.5%;
 }
 
+@media (min-width: 900px) {
+  .heading-level-1 {
+    font-size: 2.95rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1154px) {
+  .heading-level-1 {
+    font-size: 2.55rem;
+  }
+}
+
 .heading-level-1 .home-main-text-s {
   font-size: 0.9rem;
+  font-weight: normal;
   text-transform: capitalize;
   letter-spacing: normal;
   display: block;
@@ -239,11 +286,25 @@ html {
   font-weight: normal;
 }
 
+.heading-level-small {
+  font-size: 1.1rem;
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 900px) {
+  .heading-level-small {
+    font-size: 1.875rem;
+  }
+}
+
 p,
 .paragraph {
   font-size: 0.9rem;
   font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-transform: none;
+  line-height: 188%;
 }
 
 @media (min-width: 900px) {
@@ -262,12 +323,13 @@ p,
   text-transform: capitalize;
   text-decoration: none;
   color: #f6f2f0;
-  background-color: #2d2824;
+  background-color: #332d29;
   padding: 1.05rem 1.55rem;
 }
 
 .regular-button:hover {
   cursor: pointer;
+  color: #f6f2f0;
 }
 
 .regular-button.orange-regular-button {
@@ -276,7 +338,7 @@ p,
 
 .regular-button.light-regular-button {
   background-color: #f6f2f0;
-  color: #2d2824;
+  color: #332d29;
 }
 
 @media (min-width: 900px) {
@@ -339,8 +401,39 @@ p,
 }
 
 .link-arrow-button .link-arrow-button-icon path {
-  stroke: #2d2824;
+  stroke: #332d29;
   stroke-width: 5;
+}
+
+.blob {
+  position: absolute;
+  width: 80vw;
+  -webkit-animation: blobAnimation 40s linear infinite alternate;
+          animation: blobAnimation 40s linear infinite alternate;
+}
+
+@-webkit-keyframes blobAnimation {
+  0% {
+    width: 150vw;
+  }
+  50% {
+    width: 70vw;
+  }
+  100% {
+    width: 150vw;
+  }
+}
+
+@keyframes blobAnimation {
+  0% {
+    width: 150vw;
+  }
+  50% {
+    width: 70vw;
+  }
+  100% {
+    width: 150vw;
+  }
 }
 
 /** Large Modules**/
@@ -356,6 +449,11 @@ p,
   top: 0;
   width: 100%;
   border-bottom: 1px solid #d7ccc8;
+  /** Resets transparency setting **/
+}
+
+.header.tranparent-bg {
+  background-color: transparent;
 }
 
 @media (min-width: 900px) {
@@ -375,7 +473,6 @@ p,
 }
 
 .mobile-nav-check {
-  background-color: yellow;
   display: block;
   height: 27px;
   width: 47px;
@@ -489,7 +586,13 @@ p,
   margin-top: 0.3rem;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) and (max-width: 1154px) {
+  .logo-text-svg {
+    width: 11rem;
+  }
+}
+
+@media (max-width: 899px) {
   .logo-text-svg {
     width: 9rem;
   }
@@ -532,7 +635,7 @@ p,
 }
 
 /** Header Ends **/
-/** Product Card Begins **/
+/** Product Card(s) Begin(s) **/
 .products-with-arrows {
   width: 100%;
   padding-left: 8%;
@@ -546,9 +649,6 @@ p,
         grid-template-columns: auto auto auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -606,7 +706,7 @@ p,
 }
 
 .product-bg:hover {
-  background-color: #ddd4d0;
+  background-color: #d7ccc8;
 }
 
 @media (min-width: 900px) {
@@ -657,7 +757,7 @@ p,
 
 .left-arrow-button:hover,
 .right-arrow-button:hover {
-  background-color: #2d2824;
+  background-color: #332d29;
 }
 
 .left-arrow-button-icon *,
@@ -689,7 +789,7 @@ p,
 
 @media (min-width: 900px) {
   .footer-newsletter-and-links {
-    padding: 7.5em 0 7.5em 3.75rem;
+    padding: 7.5em 0 7.5em 3.125%;
     width: 70%;
   }
 }
@@ -716,7 +816,7 @@ p,
 .footer-newsletter-nudge .paragraph {
   opacity: 0.7;
   margin: 1rem 0;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 176.5%;
 }
 
@@ -868,9 +968,9 @@ p,
 
 @media (min-width: 900px) {
   .footer-site-credits {
-    width: 30%;
-    -ms-grid-columns: 85% 10% 5%;
-        grid-template-columns: 85% 10% 5%;
+    width: 40%;
+    -ms-grid-columns: 90% 7% 3%;
+        grid-template-columns: 90% 7% 3%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
   }
@@ -885,7 +985,7 @@ p,
 @media (min-width: 900px) {
   .footer-site-credits-no-decor {
     padding: 0;
-    padding-bottom: 7.5em;
+    padding-bottom: 8em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -995,7 +1095,6 @@ p,
 @media (min-width: 900px) {
   .home-main-text .home-main-text-s {
     font-size: 1.35rem;
-    margin-bottom: 1rem;
   }
 }
 
@@ -1243,7 +1342,7 @@ p,
 
 .category-description {
   margin-top: 0.8rem;
-  opacity: 0.7;
+  color: #5d5956;
   line-height: 176.5%;
   font-size: 0.8rem;
 }
@@ -1251,7 +1350,7 @@ p,
 @media (min-width: 900px) {
   .category-description {
     font-size: 1.1rem;
-    color: #55372e;
+    color: #826b64;
   }
 }
 
@@ -1264,7 +1363,7 @@ p,
 }
 
 .bespoke-section-header.dark-bg-header {
-  background-color: #2d2824;
+  background-color: #332d29;
   padding: 4.25rem 15%;
 }
 
@@ -1383,6 +1482,7 @@ p,
 .bespoke-product-heading-big {
   display: block;
   margin-bottom: 0.5rem;
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 @media (min-width: 900px) {
@@ -1552,7 +1652,7 @@ p,
 }
 
 .services-cards-with-arrows .arrow-button:hover {
-  background-color: #2d2824;
+  background-color: #332d29;
   border: 0;
 }
 
@@ -1645,7 +1745,7 @@ p,
   line-height: 109.5%;
   font-size: 1.5rem;
   padding: 6.25rem 15%;
-  background-color: #2d2824;
+  background-color: #332d29;
 }
 
 @media (min-width: 900px) {
@@ -1668,6 +1768,12 @@ p,
   }
 }
 
+@media (min-width: 900px) and (max-width: 1154px) {
+  .home-projects-nudge-text {
+    padding: 0 7%;
+  }
+}
+
 .home-projects-nudge-text .heading-level2-big,
 .home-projects-nudge-text .paragraph {
   color: #eae4e2;
@@ -1680,8 +1786,14 @@ p,
 
 @media (min-width: 900px) {
   .home-projects-nudge-text .heading-level2-big {
-    font-size: 2rem;
+    font-size: 2.23rem;
     margin-bottom: 1.875rem;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1154px) {
+  .home-projects-nudge-text .heading-level2-big {
+    font-size: 2rem;
   }
 }
 
@@ -1700,5 +1812,333 @@ p,
 }
 
 /** Landing Page Ends**/
+/** Our Story Page Begins **/
+.transparent-bg {
+  background-color: transparent;
+}
+
+@media (min-width: 900px) {
+  .our-story-header {
+    background-color: transparent;
+    border-bottom: 0;
+  }
+}
+
+.our-story-hero {
+  position: relative;
+}
+
+.our-story-hero-text {
+  position: absolute;
+  color: #eae4e2;
+  width: 100%;
+  padding: 0 10%;
+}
+
+@media (max-width: 480px) {
+  .our-story-hero-text {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .our-story-hero-text {
+    bottom: 20%;
+  }
+}
+
+@media (min-width: 900px) {
+  .our-story-hero-text {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+.mission-text-container {
+  background-color: #ddd4d0;
+  padding: 3.5rem 15%;
+  margin: 4rem 0rem;
+  line-height: 188%;
+}
+
+@media (min-width: 900px) {
+  .mission-text-container {
+    padding: 5.25rem 15%;
+    margin: 8.75rem 0rem;
+  }
+}
+
+.mission-text-container .center-align-text {
+  margin: auto;
+}
+
+@media (min-width: 600px) {
+  .mission-text-container .center-align-text {
+    max-width: 70%;
+  }
+}
+
+.mission-text-container .heading-level-small {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 900px) {
+  .mission-text-container .heading-level-small {
+    margin-bottom: 1.625rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .mission-history-facilities-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .our-story-scatter-columns-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50% 50%;
+            flex: 50% 50%;
+  }
+}
+
+.our-story-scatter-column {
+  padding: 0 10%;
+}
+
+@media (min-width: 900px) {
+  .our-story-scatter-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 10%;
+  }
+}
+
+.our-story-scatter-column .our-story-scatter-img {
+  display: block;
+  margin: 3.5rem auto;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .our-story-scatter-column .our-story-scatter-img {
+    margin: 7rem auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .our-story-scatter-column .our-story-scatter-img.left-column-scatter-img {
+    margin: 8rem auto;
+  }
+}
+
+.our-story-scatter-column .our-story-scatter-img.desktop-only {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .our-story-scatter-column .our-story-scatter-img.desktop-only {
+    display: block;
+  }
+}
+
+.facilities-history-heading {
+  margin-bottom: 1rem;
+}
+
+.image-break-wood-stack {
+  margin: 3.5rem 0;
+}
+
+@media (min-width: 900px) {
+  .image-break-wood-stack {
+    margin: 8rem 0 6rem;
+  }
+}
+
+.why-wood-mills {
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills {
+    padding: 0 14.45%;
+  }
+}
+
+@media (min-width: 900px) {
+  .our-story-blob {
+    display: none;
+  }
+}
+
+.blob-1 {
+  top: 0;
+  left: 0;
+}
+
+.blob-2 {
+  bottom: 0;
+  right: 0;
+}
+
+.why-wood-mills-subgroup {
+  margin: 5.5rem auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-subgroup {
+    margin: 11.25rem auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    text-align: left;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .why-wood-mills-subgroup:first-of-type {
+    margin-top: 6rem;
+  }
+  .why-wood-mills-subgroup.facilities-subgroup {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+.why-wood-mills-illustration {
+  display: block;
+}
+
+.why-wood-mills-illustration.manufacturers-illustration {
+  width: 90px;
+  height: 70px;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-illustration.manufacturers-illustration {
+    width: 202px;
+    height: 149.83px;
+  }
+}
+
+.why-wood-mills-illustration.facilities-ilustration {
+  width: 100px;
+  height: 60px;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-illustration.facilities-ilustration {
+    width: 230px;
+    height: 118.91px;
+  }
+}
+
+.why-wood-mills-illustration.timber-illustration {
+  width: 140px;
+  height: 55px;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-illustration.timber-illustration {
+    width: 299.95px;
+    height: 88.98px;
+  }
+}
+
+.why-wood-mills-group-text {
+  padding: 1.6rem 15% 0;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-group-text {
+    padding: 0;
+    width: 60%;
+  }
+}
+
+.why-wood-mills-group-text .heading-level-small {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-group-text .heading-level-small {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .why-wood-mills-group-text .why-wood-mills-paragraph {
+    font-size: 1.25rem;
+  }
+}
+
+.custom-products-nudge {
+  position: relative;
+}
+
+.custom-products-image {
+  display: block;
+}
+
+.custom-products-nudge-text {
+  padding: 0 15%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (min-width: 900px) {
+  .custom-products-nudge-text {
+    margin: auto;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-products-nudge-heading {
+    font-size: 1.75rem;
+  }
+}
+
+.custom-products-nudge-paragraph {
+  margin-bottom: 3rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .custom-products-nudge-paragraph {
+    font-size: 1.25rem;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    max-width: 33.438rem;
+  }
+}
+
+/** Our Story Page Ends  **/
 /*! 7 - Page Specifics End**/
 /*# sourceMappingURL=style.css.map */
