@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap");
 @font-face {
   font-family: "Syne";
   font-style: normal;
@@ -43,7 +44,7 @@
 /*! 2b - Media Query Breakpoints End Defaults Begin**/
 /*! 3 - Defaults Begin**/
 html {
-  background-color: #eae4e2;
+  background-color: #f3efee;
 }
 
 @media (min-width: 900px) and (max-width: 1154px) {
@@ -52,8 +53,10 @@ html {
   }
 }
 
-a:hover {
-  color: #ab5033;
+@media (min-width: 1200px) {
+  a:hover {
+    color: #ab5033;
+  }
 }
 
 /** Defualt scrollbar styling **/
@@ -68,7 +71,7 @@ a:hover {
 }
 
 .body-wrap * ::-webkit-scrollbar-thumb {
-  background-color: #826b64;
+  background-color: #5d5956;
 }
 
 .hide-by-default,
@@ -112,6 +115,10 @@ a:hover {
   width: 100%;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 /*! 3 - Defaults End**/
 /*! 4 - Layout & Alignment Begins**/
 .display-flex {
@@ -130,6 +137,10 @@ a:hover {
 .display-grid {
   display: -ms-grid;
   display: grid;
+}
+
+.display-block {
+  display: block;
 }
 
 .half-half-layout {
@@ -221,7 +232,7 @@ a:hover {
 /*! 4 - Layout & Alignment Ends**/
 /*! 5 - Typography Begins**/
 .heading-giant {
-  font-family: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   font-weight: normal;
   text-align: center;
   font-size: 5.375rem;
@@ -235,10 +246,20 @@ a:hover {
   }
 }
 
+.giant-subheading {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.05rem;
+}
+
+@media (min-width: 900px) {
+  .giant-subheading {
+    font-size: 1.5rem;
+  }
+}
+
 .heading-level-1 {
   font-size: 2.15rem;
   font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: -0.025em;
   line-height: 109.5%;
@@ -301,7 +322,7 @@ a:hover {
 
 p,
 .paragraph {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-transform: none;
   line-height: 188%;
@@ -322,23 +343,34 @@ p,
   font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-transform: capitalize;
   text-decoration: none;
-  color: #f6f2f0;
+  color: #fefdfd;
   background-color: #332d29;
   padding: 1.05rem 1.55rem;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 
 .regular-button:hover {
   cursor: pointer;
-  color: #f6f2f0;
+  color: #fefdfd;
+  background-color: #4a413b;
 }
 
 .regular-button.orange-regular-button {
   background-color: #ab5033;
 }
 
+.regular-button.orange-regular-button:hover {
+  background-color: #c66141;
+}
+
 .regular-button.light-regular-button {
-  background-color: #f6f2f0;
+  background-color: #fefdfd;
   color: #332d29;
+}
+
+.regular-button.light-regular-button:hover {
+  background-color: #ebe1dd;
 }
 
 @media (min-width: 900px) {
@@ -386,7 +418,7 @@ p,
 
 .link-arrow-button .link-arrow-button-text {
   font-size: 1rem;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   text-transform: capitalize;
 }
 
@@ -396,8 +428,8 @@ p,
 }
 
 .link-arrow-button .link-arrow-button-icon {
-  height: 17px;
-  width: 17px;
+  height: 1.063rem;
+  width: 1.063rem;
 }
 
 .link-arrow-button .link-arrow-button-icon path {
@@ -443,17 +475,18 @@ p,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #eae4e2;
+  background-color: #f3efee;
   position: fixed;
   z-index: 5;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid #d7ccc8;
+  border-bottom: 1px solid #e4dcda;
   /** Resets transparency setting **/
 }
 
-.header.tranparent-bg {
+.header.tranparent-header {
   background-color: transparent;
+  border: 0;
 }
 
 @media (min-width: 900px) {
@@ -474,8 +507,8 @@ p,
 
 .mobile-nav-check {
   display: block;
-  height: 27px;
-  width: 47px;
+  height: 1.688rem;
+  width: 2.938rem;
   z-index: 10;
   opacity: 0;
 }
@@ -489,13 +522,13 @@ p,
   left: 0;
   bottom: 0;
   top: 0;
-  background-color: #eae4e2;
-  border-top: 1px solid #d7ccc8;
+  background-color: #f3efee;
+  border-top: 1px solid #e4dcda;
   width: 100%;
   text-align: center;
   z-index: 10;
   /**height of header used to push menu down**/
-  margin-top: 87.8px;
+  margin-top: 5.488rem;
 }
 
 /** Additional div wrapper added to make fixed parent scrollable **/
@@ -531,8 +564,7 @@ p,
 
 .mobile-nav-footer {
   padding: 1.7rem 0;
-  border-top: 1px solid #d7ccc8;
-  border-bottom: 1px solid #d7ccc8;
+  border-top: 1px solid #e4dcda;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
@@ -608,7 +640,7 @@ p,
   padding: 0.04rem 0.313rem;
   border-radius: 50%;
   background-color: #ab5033;
-  color: #f6f2f0;
+  color: #fefdfd;
   margin-left: 0.1em;
 }
 
@@ -669,11 +701,12 @@ p,
 .products-without-arrows {
   width: 100%;
   overflow: auto;
+  padding-bottom: 1.1rem;
 }
 
 @media (min-width: 900px) {
   .products-without-arrows {
-    padding-bottom: 3rem;
+    padding-bottom: 1.875rem;
   }
 }
 
@@ -700,13 +733,13 @@ p,
 .product-bg {
   width: 15.625rem;
   height: 16.26rem;
-  background-color: #eae4e2;
+  background-color: #f3efee;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
 .product-bg:hover {
-  background-color: #d7ccc8;
+  background-color: #e6dfdc;
 }
 
 @media (min-width: 900px) {
@@ -738,7 +771,7 @@ p,
 }
 
 .product-price {
-  margin-top: 0.625rem;
+  margin-top: 0.3rem;
   color: #826b64;
 }
 
@@ -746,11 +779,11 @@ p,
 .right-arrow-button {
   height: 6.5rem;
   width: 5rem;
-  background-color: #d7ccc8;
+  background-color: #e4dcda;
   border: 0;
   cursor: pointer;
-  -webkit-transform: translateY(-60px);
-          transform: translateY(-60px);
+  -webkit-transform: translateY(-3.75rem);
+          transform: translateY(-3.75rem);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -766,9 +799,58 @@ p,
 }
 
 /** Product Card Ends **/
+/** Custom Product Nudge Begins **/
+.custom-products-nudge {
+  position: relative;
+}
+
+.custom-products-image {
+  display: block;
+}
+
+.custom-products-nudge-text {
+  padding: 0 15%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (min-width: 900px) {
+  .custom-products-nudge-text {
+    margin: auto;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-products-nudge-heading {
+    font-size: 1.75rem;
+  }
+}
+
+.custom-products-nudge-paragraph {
+  margin-bottom: 3rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .custom-products-nudge-paragraph {
+    font-size: 1.25rem;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    max-width: 33.438rem;
+  }
+}
+
+/** Custom Product Nudge Ends **/
 /** Footer Begins **/
 .footer {
-  background-color: #eae4e2;
+  background-color: #f3efee;
   text-align: center;
 }
 
@@ -809,7 +891,7 @@ p,
 
 @media (min-width: 900px) {
   .footer-newsletter-nudge .heading-level-3 {
-    font-size: 1.831rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -943,8 +1025,8 @@ p,
 }
 
 .social-links-container {
-  -webkit-transform: translateX(-7px);
-          transform: translateX(-7px);
+  -webkit-transform: translateX(-0.438rem);
+          transform: translateX(-0.438rem);
 }
 
 .social-svg {
@@ -978,7 +1060,7 @@ p,
 
 .footer-site-credits-no-decor {
   padding: 3.438rem 4%;
-  background-color: #d7ccc8;
+  background-color: #e4dcda;
   color: #faf7f6;
 }
 
@@ -1060,16 +1142,44 @@ p,
 }
 
 /** Footer Ends **/
+/** Giant Text Hero Begins **/
+.giant-text-hero {
+  padding: 3.8rem 2% 4.5rem;
+}
+
+@media (min-width: 900px) {
+  .giant-text-hero {
+    padding: 9rem 2%;
+  }
+}
+
+@media (max-width: 372px) {
+  .giant-text-hero-large-text {
+    font-size: 5rem;
+  }
+}
+
+.giant-text-hero-small-text {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 372px) {
+  .giant-text-hero-small-text {
+    font-size: 0.88rem;
+  }
+}
+
+/** Giant Text Hero Begins **/
 /*! 6 - Modules End**/
 /*! 7 - Page Specifics Begin**/
 /** Landing Page Begins **/
 .hero {
-  background-color: #d7ccc8;
+  background-color: #e4dcda;
 }
 
 .hero-text {
   height: 22rem;
-  background-color: #d7ccc8;
+  background-color: #e4dcda;
 }
 
 .hero-text .regular-button {
@@ -1083,12 +1193,12 @@ p,
 }
 
 .home-main-text {
-  width: 280px;
+  width: 17.5rem;
 }
 
 @media (min-width: 900px) {
   .home-main-text {
-    width: 388px;
+    width: 24.25rem;
   }
 }
 
@@ -1122,7 +1232,7 @@ p,
 }
 
 .scroll-and-story-nudge {
-  background-color: #ddd4d0;
+  background-color: #e6dfdc;
   position: relative;
 }
 
@@ -1142,8 +1252,8 @@ p,
 
 .story-nudge {
   padding: 4.813rem 0;
-  background-color: #eae4e2;
-  border-bottom: 1px solid #ddd4d0;
+  background-color: #f3efee;
+  border-bottom: 1px solid #e6dfdc;
 }
 
 @media (min-width: 900px) {
@@ -1177,7 +1287,7 @@ p,
 }
 
 .popular-products-section {
-  background-color: #eae4e2;
+  background-color: #f3efee;
   padding: 5.313rem 0;
 }
 
@@ -1212,8 +1322,9 @@ p,
 
 .discover-categories-section {
   width: 100%;
-  background-color: #ddd4d0;
+  background-color: #e6dfdc;
   padding: 7rem 0;
+  border-top: 1px solid #e4dcda;
 }
 
 .discover-categories-heading {
@@ -1314,9 +1425,10 @@ p,
 }
 
 .category-image:hover {
-  -webkit-transform: scale(1.039);
-          transform: scale(1.039);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
   cursor: url("images/click-to-shop-cursor.png"), pointer;
+  cursor: pointer;
 }
 
 .category-cta {
@@ -1328,21 +1440,92 @@ p,
 }
 
 @media (min-width: 900px) {
+  .category-cta.multidimensional-category-cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+/** hover state ofcategory cta and animates arrow **/
+.category-div:hover .category-cta-text {
+  color: #ab5033;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.category-div:hover .category-cta-arrow {
+  -webkit-animation: arrowRightAnimation 2s linear infinite alternate;
+          animation: arrowRightAnimation 2s linear infinite alternate;
+}
+
+.category-div:hover .category-cta-arrow path {
+  stroke: #ab5033;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+@-webkit-keyframes arrowRightAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes arrowRightAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  50% {
+    -webkit-transform: translateX(1rem);
+            transform: translateX(1rem);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@media (min-width: 900px) {
   .category-cta-text.link-arrow-button-text {
     font-size: 1.2rem;
   }
 }
 
-/** multidimensional arrow is not flexed. following transform is used to position it **/
+@media (min-width: 900px) {
+  .category-cta-arrow.link-arrow-button-icon {
+    height: 1.438rem;
+    width: 1.438rem;
+  }
+}
+
+/** multidimensional arrow is not flexed. following positioning is used to push it down a bit **/
 .multidimensional-category-arrow {
-  -webkit-transform: translateY(3.5px);
-          transform: translateY(3.5px);
   z-index: 1;
+}
+
+@media (max-width: 899px) {
+  .multidimensional-category-arrow {
+    position: relative;
+    top: 0.219rem;
+  }
 }
 
 .category-description {
   margin-top: 0.8rem;
-  color: #5d5956;
+  color: #332d29;
   line-height: 176.5%;
   font-size: 0.8rem;
 }
@@ -1350,7 +1533,6 @@ p,
 @media (min-width: 900px) {
   .category-description {
     font-size: 1.1rem;
-    color: #826b64;
   }
 }
 
@@ -1369,7 +1551,7 @@ p,
 
 .bespoke-section-header.dark-bg-header .bespoke-section-header-text,
 .bespoke-section-header.dark-bg-header .bespoke-section-header-description {
-  color: #eae4e2;
+  color: #f3efee;
 }
 
 @media (min-width: 900px) {
@@ -1426,7 +1608,7 @@ p,
 
 .home-bespoke-text.full-width {
   padding: 4rem 15%;
-  background-color: #faf7f6;
+  background-color: #fefdfd;
 }
 
 @media (min-width: 900px) {
@@ -1560,7 +1742,7 @@ p,
 }
 
 .home-services-section {
-  background-color: #ddd4d0;
+  background-color: #e6dfdc;
 }
 
 @media (min-width: 900px) {
@@ -1644,10 +1826,10 @@ p,
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-  -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
-  background-color: #ddd4d0;
-  border: solid 1px #d7ccc8;
+  -webkit-transform: translateY(-1.875rem);
+          transform: translateY(-1.875rem);
+  background-color: #e6dfdc;
+  border: solid 1px #e4dcda;
   opacity: 0;
 }
 
@@ -1657,13 +1839,13 @@ p,
 }
 
 .services-cards-with-arrows .arrow-button.left-arrow-button {
-  margin-left: 10px;
+  margin-left: 0.625rem;
 }
 
 .services-cards-with-arrows .arrow-button.right-arrow-button {
   -ms-grid-column-align: right;
       justify-self: right;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .services-cards-with-arrows:hover .arrow-button {
@@ -1673,6 +1855,7 @@ p,
 .services-cards-container {
   width: 100%;
   overflow: auto;
+  padding-bottom: 1.1rem;
 }
 
 @media (min-width: 900px) {
@@ -1729,6 +1912,7 @@ p,
   font-size: 0.75rem;
   line-height: 176.5%;
   margin-top: 0.813rem;
+  text-align: left;
 }
 
 @media (min-width: 900px) {
@@ -1745,6 +1929,7 @@ p,
   line-height: 109.5%;
   font-size: 1.5rem;
   padding: 6.25rem 15%;
+  background-color: #332d29;
   background-color: #332d29;
 }
 
@@ -1776,7 +1961,7 @@ p,
 
 .home-projects-nudge-text .heading-level2-big,
 .home-projects-nudge-text .paragraph {
-  color: #eae4e2;
+  color: #f3efee;
 }
 
 .home-projects-nudge-text .heading-level2-big {
@@ -1817,20 +2002,13 @@ p,
   background-color: transparent;
 }
 
-@media (min-width: 900px) {
-  .our-story-header {
-    background-color: transparent;
-    border-bottom: 0;
-  }
-}
-
 .our-story-hero {
   position: relative;
 }
 
 .our-story-hero-text {
   position: absolute;
-  color: #eae4e2;
+  color: #f3efee;
   width: 100%;
   padding: 0 10%;
 }
@@ -1857,7 +2035,7 @@ p,
 }
 
 .mission-text-container {
-  background-color: #ddd4d0;
+  background-color: #e6dfdc;
   padding: 3.5rem 15%;
   margin: 4rem 0rem;
   line-height: 188%;
@@ -1892,7 +2070,7 @@ p,
 
 @media (min-width: 900px) {
   .mission-history-facilities-text {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -2030,38 +2208,38 @@ p,
 }
 
 .why-wood-mills-illustration.manufacturers-illustration {
-  width: 90px;
-  height: 70px;
+  width: 5.625rem;
+  height: 4.375rem;
 }
 
 @media (min-width: 900px) {
   .why-wood-mills-illustration.manufacturers-illustration {
-    width: 202px;
-    height: 149.83px;
+    width: 12.625rem;
+    height: 9.364rem;
   }
 }
 
 .why-wood-mills-illustration.facilities-ilustration {
-  width: 100px;
-  height: 60px;
+  width: 6.25rem;
+  height: 3.75rem;
 }
 
 @media (min-width: 900px) {
   .why-wood-mills-illustration.facilities-ilustration {
-    width: 230px;
-    height: 118.91px;
+    width: 14.375rem;
+    height: 7.432rem;
   }
 }
 
 .why-wood-mills-illustration.timber-illustration {
-  width: 140px;
-  height: 55px;
+  width: 8.75rem;
+  height: 3.438rem;
 }
 
 @media (min-width: 900px) {
   .why-wood-mills-illustration.timber-illustration {
-    width: 299.95px;
-    height: 88.98px;
+    width: 18.747rem;
+    height: 5.561rem;
   }
 }
 
@@ -2092,53 +2270,552 @@ p,
   }
 }
 
-.custom-products-nudge {
+/** Our Story Page Ends  **/
+/** Our Services Page Begins **/
+.service-container {
   position: relative;
+  padding: 6rem 20%;
 }
 
-.custom-products-image {
+.service-container.service-container-1 {
+  background-color: #fefdfd;
+}
+
+.service-container.service-container-2 {
+  background-color: #f3efee;
+}
+
+.service-container.service-container-3 {
+  background-color: #e6dfdc;
+}
+
+.service-container.service-container-4 {
+  background-color: #e4dcda;
+  border-bottom: 1px rgba(85, 55, 46, 0.2) solid;
+}
+
+@media (min-width: 900px) {
+  .service-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 23% 50%;
+        grid-template-columns: 23% 50%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 8rem 10.7% 8rem 18.4%;
+  }
+  .service-container.flex-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.service-number {
+  font-size: 2.5rem;
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #55372e;
+  opacity: 0.4;
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .service-number {
+    font-size: 4.5rem;
+    left: 3rem;
+  }
+}
+
+.service-heading {
+  opacity: 0.75;
+  font-size: 1.7rem;
+}
+
+@media (max-width: 372px) {
+  .service-heading {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .service-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.service-subheading {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: normal;
+  font-size: 1.45rem;
+  margin: 1rem 0 3rem;
+}
+
+.service-subheading .underline {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (max-width: 372px) {
+  .service-subheading {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .service-subheading {
+    font-size: 1.75rem;
+    margin: 1.875rem 0 0;
+    line-height: 144%;
+  }
+}
+
+@media (min-width: 900px) {
+  .service-details-container {
+    margin-left: 11.7%;
+  }
+}
+
+.service-paragraph {
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 900px) {
+  .service-paragraph {
+    font-size: 1.25rem;
+    margin-bottom: 1.875rem;
+  }
+}
+
+.service-link {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 900px) {
+  .service-link {
+    font-size: 1.125rem;
+  }
+}
+
+/** Our Services Page Ends **/
+/** Contact Us Page Begins **/
+.contact-us-main-heading {
+  text-align: center;
+  padding: 7rem 1rem 6rem;
+}
+
+@media (min-width: 900px) {
+  .contact-us-main-heading {
+    padding: 9rem 1rem;
+  }
+}
+
+.contact-us-main-heading .contact-us-heading-serif {
+  font-size: 1.7rem;
+  font-family: "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-weight: normal;
+  color: #826b64;
+  opacity: 0.5;
+  text-transform: capitalize;
   display: block;
 }
 
-.custom-products-nudge-text {
-  padding: 0 15%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+@media (min-width: 900px) {
+  .contact-us-main-heading .contact-us-heading-serif {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (min-width: 900px) {
-  .custom-products-nudge-text {
-    margin: auto;
-    padding: 0;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+  .contact-us-main-heading .contact-us-heading-sans {
+    font-size: 4rem;
   }
 }
 
-@media (max-width: 480px) {
-  .custom-products-nudge-heading {
-    font-size: 1.75rem;
+.contact-us-details {
+  width: 100%;
+  background-color: #ddd4d0;
+}
+
+@media (min-width: 900px) {
+  .contact-us-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
-.custom-products-nudge-paragraph {
+@media (min-width: 900px) {
+  .contact-us-details .contact-us-picture {
+    width: 35%;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1005px) {
+  .contact-us-details .contact-us-picture {
+    width: 55%;
+  }
+}
+
+@media (min-width: 900px) and (min-width: 1343px) {
+  .contact-us-details .contact-us-picture {
+    width: 30%;
+  }
+}
+
+.contact-us-details .contact-us-image {
+  width: 100%;
+  display: block;
+}
+
+.contact-us-details-text {
+  padding: 3rem 15%;
+}
+
+@media (min-width: 900px) {
+  .contact-us-details-text {
+    padding: 0 7rem;
+    width: 65.1%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1005px) {
+  .contact-us-details-text {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 900px) and (min-width: 1155px) and (max-width: 1200px) {
+  .contact-us-details-text {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .contact-us-paragraph {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-social-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.contact-social-link {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.7rem 0;
+  padding: 1rem 12%;
+  border-radius: 10px;
+  -webkit-transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .contact-social-link {
+    font-size: 1.5rem;
+    padding: 0.85rem 7%;
+    margin: 1rem 0;
+  }
+}
+
+.contact-social-link:first-of-type {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .contact-social-link:first-of-type {
+    margin-top: 2.5rem;
+  }
+}
+
+.contact-social-link:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .contact-social-link:last-of-type {
+    margin-bottom: 3rem;
+  }
+}
+
+.contact-social-link:hover {
+  opacity: 0.7;
+}
+
+.contact-whatsapp-link {
+  background-color: rgba(37, 211, 102, 0.7);
+}
+
+.contact-messenger-link {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 163, 255, 0.7)), color-stop(47.92%, rgba(0, 147, 254, 0.7)), to(rgba(2, 136, 255, 0.7)));
+  background: linear-gradient(90deg, rgba(0, 163, 255, 0.7) 0%, rgba(0, 147, 254, 0.7) 47.92%, rgba(2, 136, 255, 0.7) 100%);
+}
+
+.contact-instagram-link {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(252, 155, 24, 0.7)), color-stop(47.92%, rgba(245, 12, 2, 0.7)), to(rgba(204, 0, 121, 0.7)));
+  background: linear-gradient(90deg, rgba(252, 155, 24, 0.7) 0%, rgba(245, 12, 2, 0.7) 47.92%, rgba(204, 0, 121, 0.7) 100%);
+}
+
+.social-link-text {
+  color: #ffffff;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin-right: 0.5rem;
+}
+
+.social-link-text .desktop-only {
+  color: #ffffff;
+}
+
+@media (max-width: 899px) {
+  .social-link-icon {
+    height: 1.563rem;
+  }
+}
+
+.telephone-email {
+  margin: 3rem 0;
+}
+
+@media (min-width: 900px) {
+  .email-bit {
+    margin-bottom: 4rem;
+  }
+}
+
+.telephone-email-heading {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #5d5956;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 900px) {
+  .telephone-email-heading {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.telephone-email-text {
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.2rem;
+  line-height: 170%;
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .telephone-email-text {
+    font-size: 1.875rem;
+  }
+}
+
+.project-request-form-nudge {
+  padding: 3rem 0 0;
+  border-top: 1px rgba(85, 55, 46, 0.3) solid;
+}
+
+@media (min-width: 900px) {
+  .project-request-form-nudge-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .addresses {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+}
+
+.showroom-factory-address {
+  padding: 4rem 15%;
+}
+
+@media (min-width: 900px) {
+  .showroom-factory-address {
+    padding: 9.375rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.showroom-address {
+  background-color: #ab5033;
+}
+
+.factory-address {
+  background-color: #55372e;
+}
+
+@media (min-width: 900px) {
+  .showroom-factory-address-title,
+  .showroom-factory-address-text {
+    width: 23.5rem;
+  }
+}
+
+.showroom-factory-address-title {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: #f3efee;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 900px) {
+  .showroom-factory-address-title {
+    font-size: 2.25rem;
+  }
+}
+
+.showroom-factory-address-text {
+  color: #faf7f6;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 900px) {
+  .showroom-factory-address-text {
+    font-size: 1.875rem;
+  }
+}
+
+.showroom-factory-address-text .display-block {
+  color: #faf7f6;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 900px) {
+  .showroom-factory-address-text .display-block {
+    font-size: 1.875rem;
+  }
+}
+
+/** Contact Us Page Ends **/
+/** FAQ Page Begins **/
+@media (min-width: 900px) {
+  .faq-giant-text-hero {
+    padding: 5rem 2%;
+  }
+}
+
+.faqs-contact-us {
+  background-color: #ab5033;
+  padding: 1em 2em;
+}
+
+@media (min-width: 900px) {
+  .faqs-contact-us {
+    font-size: 1.2rem;
+  }
+}
+
+.faqs-contact-us-heading,
+.faqs-contact-us-link {
+  color: #faf7f6;
+  font-family: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-align: center;
+  font-weight: normal;
+}
+
+.faqs-contact-us-link:hover {
+  color: #332d29;
+}
+
+.question-cluster {
+  padding: 2rem 15%;
+  background-color: #fefdfd;
+}
+
+@media (min-width: 900px) {
+  .question-cluster {
+    padding: 3rem 20%;
+  }
+}
+
+.about-cluster {
+  padding: 6rem 15% 2rem;
+}
+
+@media (min-width: 900px) {
+  .about-cluster {
+    padding: 8rem 20% 3rem;
+  }
+}
+
+.question-cluster-heading {
+  font-size: 2.1rem;
+  color: #55372e;
+  opacity: 0.3;
+  text-align: right;
   margin-bottom: 3rem;
-  margin-top: 0.5rem;
 }
 
 @media (min-width: 900px) {
-  .custom-products-nudge-paragraph {
-    font-size: 1.25rem;
-    margin-bottom: 6rem;
-    margin-top: 1rem;
-    max-width: 33.438rem;
+  .question-cluster-heading {
+    font-size: 3.375rem;
   }
 }
 
-/** Our Story Page Ends  **/
+.question-and-answer {
+  margin-bottom: 3rem;
+}
+
+.question {
+  font-family: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .question {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/** FAQ Page Ends **/
 /*! 7 - Page Specifics End**/
 /*# sourceMappingURL=style.css.map */

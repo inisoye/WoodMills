@@ -23,6 +23,8 @@
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
+@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap");
+
 /**
 **TABLE OF CONTENTS**
 1-Variables
@@ -42,10 +44,14 @@ $dark2: #211d1a;
 $dark3: #5d5956;
 
 $light1: #faf7f6;
-$light2: #f6f2f0;
-$light3: #eae4e2;
-$light4: #ddd4d0;
-$light5: #d7ccc8;
+$light2a: #f6f2f0;
+$light2: lighten($light2a, 4%);
+$light3a: #eae4e2;
+$light3: lighten($light3a, 4%);
+$light4a: #ddd4d0;
+$light4: lighten($light4a, 4%);
+$light5a: #d7ccc8;
+$light5: lighten($light5a, 6%);
 
 $medium1: #826b64;
 $medium2: #55372e;
@@ -70,11 +76,11 @@ $main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$serif: Baskervville, "Palatino Linotype", Palatino, Palladio, "URW Palladio L",
-  "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter",
-  "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow",
-  "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L",
-  Georgia, serif;
+$serif: "Baskervville", "Palatino Linotype", Palatino, Palladio,
+  "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
+  "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
+  "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
+  "Century Schoolbook L", Georgia, serif;
 
 $left-right-padding-mobile: 15%;
 $left-right-header-footer-padding-mobile: 4%;
@@ -143,7 +149,9 @@ html {
 }
 
 a:hover {
-  color: $accent;
+  @include for-desktop-up {
+    color: $accent;
+  }
 }
 
 /** Defualt scrollbar styling **/
@@ -161,7 +169,7 @@ a:hover {
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: $medium1;
+      background-color: $dark3;
     }
     //* scrollbar styling ends
   }
@@ -203,6 +211,10 @@ a:hover {
 .full-width {
   width: 100%;
 }
+
+.underline {
+  text-decoration: underline;
+}
 /*! 3 - Defaults End**/
 
 /*! 4 - Layout & Alignment Begins**/
@@ -216,6 +228,10 @@ a:hover {
 
 .display-grid {
   display: grid;
+}
+
+.display-block {
+  display: block;
 }
 
 .half-half-layout {
@@ -288,10 +304,18 @@ a:hover {
   }
 }
 
+.giant-subheading {
+  font-family: $heading;
+  font-size: 1.05rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.5rem;
+  }
+}
+
 .heading-level-1 {
   font-size: 2.15rem;
   font-family: $heading;
-  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: -0.025em;
   line-height: 109.5%;
@@ -346,7 +370,7 @@ a:hover {
 
 p,
 .paragraph {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-family: $main;
   text-transform: none;
   line-height: 188%;
@@ -367,18 +391,29 @@ p,
   color: $light2;
   background-color: $dark1;
   padding: 1.05rem 1.55rem;
+  transition: all ease 0.3s;
 
   &:hover {
     cursor: pointer;
     color: $light2;
+    background-color: lighten($dark1, 8%);
   }
 
   &.orange-regular-button {
     background-color: $accent;
+
+    &:hover {
+      background-color: lighten($accent, 8%);
+    }
   }
+
   &.light-regular-button {
     background-color: $light2;
     color: $dark1;
+
+    &:hover {
+      background-color: darken($light2, 10%);
+    }
   }
 
   @include for-tablet-landscape-up {
@@ -419,7 +454,7 @@ p,
   text-decoration: none;
   .link-arrow-button-text {
     font-size: 1rem;
-    margin-right: 10px;
+    margin-right: 0.625rem;
     text-transform: capitalize;
 
     &.syne {
@@ -428,8 +463,8 @@ p,
     }
   }
   .link-arrow-button-icon {
-    height: 17px;
-    width: 17px;
+    height: 1.063rem;
+    width: 1.063rem;
 
     path {
       stroke: $dark1;
@@ -459,7 +494,6 @@ p,
 }
 
 /** Large Modules**/
-
 /** Header Begins **/
 .header {
   padding: 1rem $left-right-header-footer-padding-mobile;
@@ -472,8 +506,9 @@ p,
   border-bottom: 1px solid $light5;
 
   /** Resets transparency setting **/
-  &.tranparent-bg {
+  &.tranparent-header {
     background-color: transparent;
+    border: 0;
   }
 
   @include for-tablet-landscape-up {
@@ -493,8 +528,8 @@ p,
 
 .mobile-nav-check {
   display: block;
-  height: 27px;
-  width: 47px;
+  height: 1.688rem;
+  width: 2.938rem;
   z-index: 10;
   opacity: 0;
 }
@@ -515,7 +550,7 @@ p,
   z-index: 10;
 
   /**height of header used to push menu down**/
-  margin-top: 87.8px;
+  margin-top: 5.488rem;
 }
 
 /** Additional div wrapper added to make fixed parent scrollable **/
@@ -552,7 +587,6 @@ p,
 .mobile-nav-footer {
   padding: 1.7rem 0;
   border-top: 1px solid $light5;
-  border-bottom: 1px solid $light5;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
@@ -678,9 +712,10 @@ p,
 .products-without-arrows {
   width: 100%;
   overflow: auto;
+  padding-bottom: 1.1rem;
 
   @include for-tablet-landscape-up {
-    padding-bottom: 3rem;
+    padding-bottom: 1.875rem;
   }
 }
 
@@ -709,7 +744,7 @@ p,
   transition: all 1s ease;
 
   &:hover {
-    background-color: $light5;
+    background-color: $light4;
   }
 
   @include for-tablet-landscape-up {
@@ -737,7 +772,7 @@ p,
 }
 
 .product-price {
-  margin-top: 0.625rem;
+  margin-top: 0.3rem;
   color: $medium1;
 }
 
@@ -748,7 +783,7 @@ p,
   background-color: $light5;
   border: 0;
   cursor: pointer;
-  transform: translateY(-60px);
+  transform: translateY(-3.75rem);
   transition: all 0.5s ease;
   // visibility: hidden;
 
@@ -764,6 +799,49 @@ p,
   }
 }
 /** Product Card Ends **/
+
+/** Custom Product Nudge Begins **/
+.custom-products-nudge {
+  position: relative;
+}
+
+.custom-products-image {
+  display: block;
+}
+
+.custom-products-nudge-text {
+  padding: 0 $left-right-padding-mobile;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include for-tablet-landscape-up {
+    margin: auto;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.custom-products-nudge-heading {
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
+}
+
+.custom-products-nudge-paragraph {
+  margin-bottom: 3rem;
+  margin-top: 0.5rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.25rem;
+    margin-bottom: 6rem;
+    margin-top: 1rem;
+    max-width: 33.438rem;
+  }
+}
+/** Custom Product Nudge Ends **/
 
 /** Footer Begins **/
 .footer {
@@ -798,7 +876,7 @@ p,
     line-height: 109.5%;
 
     @include for-tablet-landscape-up {
-      font-size: 1.831rem;
+      font-size: 1.8rem;
     }
   }
 
@@ -905,7 +983,7 @@ p,
 }
 
 .social-links-container {
-  transform: translateX(-7px);
+  transform: translateX(-0.438rem);
 }
 
 .social-svg {
@@ -994,8 +1072,31 @@ p,
     height: 100%;
   }
 }
-
 /** Footer Ends **/
+
+/** Giant Text Hero Begins **/
+.giant-text-hero {
+  padding: 3.8rem 2% 4.5rem;
+
+  @include for-tablet-landscape-up {
+    padding: 9rem 2%;
+  }
+}
+
+.giant-text-hero-large-text {
+  @media (max-width: 372px) {
+    font-size: 5rem;
+  }
+}
+
+.giant-text-hero-small-text {
+  margin-top: 1.5rem;
+
+  @media (max-width: 372px) {
+    font-size: 0.88rem;
+  }
+}
+/** Giant Text Hero Begins **/
 
 /*! 6 - Modules End**/
 
@@ -1019,16 +1120,15 @@ p,
 }
 
 .home-main-text {
-  width: 280px;
+  width: 17.5rem;
 
   @include for-tablet-landscape-up {
-    width: 388px;
+    width: 24.25rem;
   }
 
   .home-main-text-s {
     @include for-tablet-landscape-up {
       font-size: 1.35rem;
-      // margin-bottom: 1rem;
     }
 
     @include for-intermediate-screens {
@@ -1131,6 +1231,8 @@ p,
   width: 100%;
   background-color: $light4;
   padding: 7rem 0;
+  border-top: 1px solid $light5;
+  // display: none;
 }
 
 .discover-categories-heading {
@@ -1208,8 +1310,9 @@ p,
   transition: all ease 0.5s;
 
   &:hover {
-    transform: scale(1.039);
+    transform: scale(1.05);
     cursor: url("images/click-to-shop-cursor.png"), pointer;
+    cursor: pointer;
   }
 }
 
@@ -1218,6 +1321,43 @@ p,
 
   &.multidimensional-category-cta {
     display: block;
+
+    @include for-tablet-landscape-up {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+/** hover state ofcategory cta and animates arrow **/
+.category-div {
+  &:hover {
+    .category-cta-text {
+      color: $accent;
+      transition: all ease 0.5s;
+    }
+
+    .category-cta-arrow {
+      animation: arrowRightAnimation 2s linear infinite alternate;
+      path {
+        stroke: $accent;
+        transition: all ease 0.5s;
+      }
+    }
+  }
+}
+
+@keyframes arrowRightAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    transform: translateX(0px);
   }
 }
 
@@ -1227,21 +1367,31 @@ p,
   }
 }
 
-/** multidimensional arrow is not flexed. following transform is used to position it **/
+.category-cta-arrow.link-arrow-button-icon {
+  @include for-tablet-landscape-up {
+    height: 1.438rem;
+    width: 1.438rem;
+  }
+}
+
+/** multidimensional arrow is not flexed. following positioning is used to push it down a bit **/
 .multidimensional-category-arrow {
-  transform: translateY(3.5px);
+  @include for-tablet-landscape-down {
+    position: relative;
+    top: 0.219rem;
+  }
+
   z-index: 1;
 }
 
 .category-description {
   margin-top: 0.8rem;
-  color: $dark3;
+  color: $dark1;
   line-height: 176.5%;
   font-size: 0.8rem;
 
   @include for-tablet-landscape-up {
     font-size: 1.1rem;
-    color: $medium1;
   }
 }
 
@@ -1302,7 +1452,7 @@ p,
 
 .home-bespoke-text.full-width {
   padding: 4rem $left-right-padding-mobile;
-  background-color: $light1;
+  background-color: $light2;
 
   @include for-tablet-landscape-up {
     padding: 4rem $left-right-padding-mobile;
@@ -1473,7 +1623,7 @@ p,
   .arrow-button {
     grid-row: 1/2;
     grid-column: 1/2;
-    transform: translateY(-30px);
+    transform: translateY(-1.875rem);
     background-color: $light4;
     border: solid 1px $light5;
     opacity: 0;
@@ -1484,12 +1634,12 @@ p,
     }
 
     &.left-arrow-button {
-      margin-left: 10px;
+      margin-left: 0.625rem;
     }
 
     &.right-arrow-button {
       justify-self: right;
-      margin-right: 10px;
+      margin-right: 0.625rem;
     }
   }
 
@@ -1503,6 +1653,7 @@ p,
 .services-cards-container {
   width: 100%;
   overflow: auto;
+  padding-bottom: 1.1rem;
 
   @include for-tablet-landscape-up {
     grid-row: 1/2;
@@ -1532,8 +1683,6 @@ p,
   @include for-tablet-landscape-up {
     font-size: 1.6rem;
     font-size: 1.5rem;
-    // font-family: $main;
-    // font-family: $heading;
   }
 }
 
@@ -1549,6 +1698,7 @@ p,
   font-size: 0.75rem;
   line-height: 176.5%;
   margin-top: 0.813rem;
+  text-align: left;
 
   @include for-tablet-landscape-up {
     font-size: 1.05rem;
@@ -1563,6 +1713,7 @@ p,
   line-height: 109.5%;
   font-size: 1.5rem;
   padding: 6.25rem $left-right-padding-mobile;
+  background-color: $dark1;
   background-color: $dark1;
 
   @include for-tablet-landscape-up {
@@ -1615,13 +1766,6 @@ p,
 /** Our Story Page Begins **/
 .transparent-bg {
   background-color: transparent;
-}
-
-@include for-tablet-landscape-up {
-  .our-story-header {
-    background-color: transparent;
-    border-bottom: 0;
-  }
 }
 
 .our-story-hero {
@@ -1679,7 +1823,7 @@ p,
 
 .mission-history-facilities-text {
   @include for-tablet-landscape-up {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -1786,32 +1930,32 @@ p,
   display: block;
 
   &.manufacturers-illustration {
-    width: 90px;
-    height: 70px;
+    width: 5.625rem;
+    height: 4.375rem;
 
     @include for-tablet-landscape-up {
-      width: 202px;
-      height: 149.83px;
+      width: 12.625rem;
+      height: 9.364rem;
     }
   }
 
   &.facilities-ilustration {
-    width: 100px;
-    height: 60px;
+    width: 6.25rem;
+    height: 3.75rem;
 
     @include for-tablet-landscape-up {
-      width: 230px;
-      height: 118.91px;
+      width: 14.375rem;
+      height: 7.432rem;
     }
   }
 
   &.timber-illustration {
-    width: 140px;
-    height: 55px;
+    width: 8.75rem;
+    height: 3.438rem;
 
     @include for-tablet-landscape-up {
-      width: 299.95px;
-      height: 88.98px;
+      width: 18.747rem;
+      height: 5.561rem;
     }
   }
 }
@@ -1838,48 +1982,466 @@ p,
     }
   }
 }
+/** Our Story Page Ends  **/
 
-.custom-products-nudge {
+/** Our Services Page Begins **/
+// .our-services-header {
+//   @include for-tablet-landscape-up {
+//     border: 0;
+//   }
+// }
+
+.service-container {
   position: relative;
-}
+  padding: 6rem 20%;
 
-.custom-products-image {
-  display: block;
-}
-
-.custom-products-nudge-text {
-  padding: 0 $left-right-padding-mobile;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  &.service-container-1 {
+    background-color: $light2;
+  }
+  &.service-container-2 {
+    background-color: $light3;
+  }
+  &.service-container-3 {
+    background-color: $light4;
+  }
+  &.service-container-4 {
+    background-color: $light5;
+    border-bottom: 1px rgba(85, 55, 46, 0.2) solid;
+  }
 
   @include for-tablet-landscape-up {
-    margin: auto;
-    padding: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 23% 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8rem 10.7% 8rem 18.4%;
+
+    &.flex-column {
+      flex-direction: column;
+    }
   }
 }
 
-.custom-products-nudge-heading {
-  @media (max-width: 480px) {
+.service-number {
+  font-size: 2.5rem;
+  font-family: $heading;
+  color: $medium2;
+  opacity: 0.4;
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 4.5rem;
+    left: 3rem;
+  }
+}
+
+.service-heading {
+  opacity: 0.75;
+  font-size: 1.7rem;
+
+  @media (max-width: 372px) {
+    font-size: 1.4rem;
+  }
+
+  @include for-tablet-landscape-up {
+    font-size: 2.25rem;
+  }
+}
+
+.service-subheading {
+  font-family: $main;
+  font-weight: normal;
+  font-size: 1.45rem;
+  margin: 1rem 0 3rem;
+
+  .underline {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  @media (max-width: 372px) {
+    font-size: 1.2rem;
+  }
+
+  @include for-tablet-landscape-up {
     font-size: 1.75rem;
+    margin: 1.875rem 0 0;
+    line-height: 144%;
   }
 }
 
-.custom-products-nudge-paragraph {
-  margin-bottom: 3rem;
-  margin-top: 0.5rem;
+.service-details-container {
+  @include for-tablet-landscape-up {
+    margin-left: 11.7%;
+  }
+}
+
+.service-paragraph {
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
 
   @include for-tablet-landscape-up {
     font-size: 1.25rem;
-    margin-bottom: 6rem;
-    margin-top: 1rem;
-    max-width: 33.438rem;
+    margin-bottom: 1.875rem;
   }
 }
 
-/** Our Story Page Ends  **/
+.service-link {
+  font-size: 0.8rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.125rem;
+  }
+}
+/** Our Services Page Ends **/
+
+/** Contact Us Page Begins **/
+// .contact-us-header {
+//   @include for-tablet-landscape-up {
+//     border: 0;
+//     background: $light2;
+//   }
+// }
+
+.contact-us-main-heading {
+  text-align: center;
+  padding: 7rem 1rem 6rem;
+
+  @include for-tablet-landscape-up {
+    padding: 9rem 1rem;
+  }
+
+  .contact-us-heading-serif {
+    font-size: 1.7rem;
+    font-family: $serif;
+    font-weight: normal;
+    color: $medium1;
+    opacity: 0.5;
+    text-transform: capitalize;
+    display: block;
+
+    @include for-tablet-landscape-up {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .contact-us-heading-sans {
+    @include for-tablet-landscape-up {
+      font-size: 4rem;
+    }
+  }
+}
+
+.contact-us-details {
+  width: 100%;
+  background-color: #ddd4d0;
+
+  @include for-tablet-landscape-up {
+    display: flex;
+  }
+
+  .contact-us-picture {
+    @include for-tablet-landscape-up {
+      width: 35%;
+
+      @media (max-width: 1005px) {
+        width: 55%;
+      }
+
+      @media (min-width: 1343px) {
+        width: 30%;
+      }
+    }
+  }
+
+  .contact-us-image {
+    width: 100%;
+    display: block;
+  }
+}
+
+.contact-us-details-text {
+  padding: 3rem $left-right-padding-mobile;
+
+  @include for-tablet-landscape-up {
+    padding: 0 7rem;
+    width: 65.1%;
+    justify-self: center;
+    align-self: center;
+
+    @media (max-width: 1005px) {
+      padding: 0 4rem;
+    }
+
+    @media (min-width: 1155px) and (max-width: 1200px) {
+      padding: 0 4rem;
+    }
+  }
+}
+
+.contact-us-paragraph {
+  @include for-tablet-landscape-up {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-social-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-social-link {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.7rem 0;
+  padding: 1rem 12%;
+  border-radius: 10px;
+  transition: opacity ease 0.5s;
+  text-decoration: none;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.5rem;
+    padding: 0.85rem 7%;
+    margin: 1rem 0;
+  }
+
+  &:first-of-type {
+    margin-top: 1.5rem;
+
+    @include for-tablet-landscape-up {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &:last-of-type {
+    margin-bottom: 1.5rem;
+
+    @include for-tablet-landscape-up {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.contact-whatsapp-link {
+  background-color: $whatsapp;
+}
+
+.contact-messenger-link {
+  background: $facebook;
+}
+
+.contact-instagram-link {
+  background: $instagram;
+}
+
+.social-link-text {
+  color: #ffffff;
+  font-family: $main;
+  margin-right: 0.5rem;
+
+  .desktop-only {
+    color: #ffffff;
+  }
+}
+
+.social-link-icon {
+  @include for-tablet-landscape-down {
+    height: 1.563rem;
+  }
+}
+
+.telephone-email {
+  margin: 3rem 0;
+}
+
+.email-bit {
+  @include for-tablet-landscape-up() {
+    margin-bottom: 4rem;
+  }
+}
+
+.telephone-email-heading {
+  font-family: $heading;
+  color: $dark3;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.telephone-email-text {
+  font-family: $main;
+  font-size: 1.2rem;
+  line-height: 170%;
+  text-decoration: none;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.875rem;
+  }
+}
+
+.project-request-form-nudge {
+  padding: 3rem 0 0;
+  border-top: 1px rgba(85, 55, 46, 0.3) solid;
+}
+
+.project-request-form-nudge-text {
+  @include for-tablet-landscape-up {
+    font-size: 1.5rem;
+  }
+}
+
+.addresses {
+  @include for-tablet-landscape-up {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.showroom-factory-address {
+  padding: 4rem $left-right-padding-mobile;
+
+  @include for-tablet-landscape-up {
+    padding: 9.375rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.showroom-address {
+  background-color: $accent;
+}
+
+.factory-address {
+  background-color: $medium2;
+}
+
+.showroom-factory-address-title,
+.showroom-factory-address-text {
+  @include for-tablet-landscape-up {
+    width: 23.5rem;
+  }
+}
+
+.showroom-factory-address-title {
+  font-family: $heading;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: $light3;
+  font-size: 1.4rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 2.25rem;
+  }
+}
+
+.showroom-factory-address-text {
+  color: $light1;
+  font-size: 1.2rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.875rem;
+  }
+
+  .display-block {
+    color: $light1;
+    font-size: 1.2rem;
+
+    @include for-tablet-landscape-up {
+      font-size: 1.875rem;
+    }
+  }
+}
+/** Contact Us Page Ends **/
+
+/** FAQ Page Begins **/
+.faq-giant-text-hero {
+  @include for-tablet-landscape-up {
+    padding: 5rem 2%;
+  }
+}
+
+.faqs-contact-us {
+  background-color: $accent;
+  padding: 1em 2em;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.2rem;
+  }
+}
+
+.faqs-contact-us-heading,
+.faqs-contact-us-link {
+  color: $light1;
+  font-family: $main;
+  text-align: center;
+  font-weight: normal;
+}
+
+.faqs-contact-us-link:hover {
+  color: $dark1;
+}
+
+.question-cluster {
+  padding: 2rem $left-right-padding-mobile;
+  background-color: $light2;
+
+  @include for-tablet-landscape-up {
+    padding: 3rem 20%;
+  }
+}
+
+.about-cluster {
+  padding: 6rem $left-right-padding-mobile 2rem;
+
+  @include for-tablet-landscape-up {
+    padding: 8rem 20% 3rem;
+  }
+}
+
+.question-cluster-heading {
+  font-size: 2.1rem;
+  color: $medium2;
+  opacity: 0.3;
+  text-align: right;
+  margin-bottom: 3rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 3.375rem;
+  }
+}
+
+.question-and-answer {
+  margin-bottom: 3rem;
+}
+
+.question {
+  font-family: $heading;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+}
+/** FAQ Page Ends **/
 
 /*! 7 - Page Specifics End**/
