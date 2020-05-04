@@ -44,14 +44,14 @@ $dark2: #211d1a;
 $dark3: #5d5956;
 
 $light1: #faf7f6;
-$light2a: #f6f2f0;
-$light2: lighten($light2a, 4%);
-$light3a: #eae4e2;
-$light3: lighten($light3a, 4%);
-$light4a: #ddd4d0;
-$light4: lighten($light4a, 4%);
-$light5a: #d7ccc8;
-$light5: lighten($light5a, 6%);
+$light2: #f6f2f0;
+// $light2: lighten($light2a, 4%);
+$light3: #eae4e2;
+// $light3: lighten($light3a, 4%);
+$light4: #ddd4d0;
+// $light4: lighten($light4a, 4%);
+$light5: #d7ccc8;
+// $light5: lighten($light5a, 6%);
 
 $medium1: #826b64;
 $medium2: #55372e;
