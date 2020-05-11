@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap");
 @font-face {
   font-family: "Syne";
   font-style: normal;
@@ -61,17 +60,17 @@ html {
 
 /** Defualt scrollbar styling **/
 .body-wrap * ::-webkit-scrollbar {
-  height: 4.5px;
+  height: 3px;
   width: 10px;
-  background-color: #ffffff;
+  background-color: #faf7f6;
 }
 
 .body-wrap * ::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background-color: #faf7f6;
 }
 
 .body-wrap * ::-webkit-scrollbar-thumb {
-  background-color: #5d5956;
+  background-color: #c8bbb7;
 }
 
 .hide-by-default,
@@ -92,18 +91,18 @@ html {
 }
 
 .push-below-header {
-  margin-top: 5.488rem;
+  margin-top: 4.75rem;
 }
 
 @media (min-width: 900px) {
   .push-below-header {
-    margin-top: 5.688rem;
+    margin-top: 5.149rem;
   }
 }
 
 @media (min-width: 900px) and (max-width: 1154px) {
   .push-below-header {
-    margin-top: 5.25rem;
+    margin-top: 5.2rem;
   }
 }
 
@@ -232,7 +231,7 @@ html {
 /*! 4 - Layout & Alignment Ends**/
 /*! 5 - Typography Begins**/
 .heading-giant {
-  font-family: "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: spectral, "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   font-weight: normal;
   text-align: center;
   font-size: 5.375rem;
@@ -357,11 +356,13 @@ p,
 }
 
 .regular-button.orange-regular-button {
+  background-color: #c66141;
   background-color: #ab5033;
 }
 
 .regular-button.orange-regular-button:hover {
-  background-color: #c66141;
+  background-color: #ab5033;
+  background-color: #bf5939;
 }
 
 .regular-button.light-regular-button {
@@ -471,7 +472,7 @@ p,
 /** Large Modules**/
 /** Header Begins **/
 .header {
-  padding: 1rem 4%;
+  padding: 1.5rem 4%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -491,7 +492,7 @@ p,
 
 @media (min-width: 900px) {
   .header {
-    padding: 1.1rem 3.125%;
+    padding: 1.7rem 3.125%;
   }
 }
 
@@ -528,7 +529,7 @@ p,
   text-align: center;
   z-index: 10;
   /**height of header used to push menu down**/
-  margin-top: 5.488rem;
+  margin-top: 4.5rem;
 }
 
 /** Additional div wrapper added to make fixed parent scrollable **/
@@ -612,6 +613,14 @@ p,
 .mobile-nav-footer-link {
   opacity: 0.7;
   font-size: 0.95rem;
+}
+
+.logo-text-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .logo-text-svg {
@@ -738,8 +747,15 @@ p,
   transition: all 1s ease;
 }
 
+@media (max-width: 899px) {
+  .product-bg {
+    background-color: #dfd7d3;
+  }
+}
+
 .product-bg:hover {
   background-color: #ddd4d0;
+  background-color: #dfd7d3;
 }
 
 @media (min-width: 900px) {
@@ -952,6 +968,11 @@ p,
 }
 
 .footer-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: -ms-grid;
+  display: grid;
   -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
   -ms-grid-columns: auto;
@@ -1258,13 +1279,13 @@ p,
 
 @media (min-width: 900px) {
   .story-nudge {
-    padding: 6.5rem 0;
+    padding: 5rem 0;
   }
 }
 
 .story-nudge-text {
   line-height: 188%;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   padding: 0 9.1%;
 }
 
@@ -1322,9 +1343,15 @@ p,
 
 .discover-categories-section {
   width: 100%;
-  background-color: #ddd4d0;
-  padding: 7rem 0;
+  background-color: #d7ccc8;
+  padding: 4.5rem 0;
   border-top: 1px solid #d7ccc8;
+}
+
+@media (min-width: 900px) {
+  .discover-categories-section {
+    padding: 5rem 0 7rem;
+  }
 }
 
 .discover-categories-heading {
@@ -1373,7 +1400,7 @@ p,
             column-gap: 5rem;
   }
   .category-details-container > div {
-    padding-top: 8rem;
+    padding-top: 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1411,6 +1438,7 @@ p,
       align-self: center;
   border-bottom: 2px solid transparent;
   padding-bottom: 0.3rem;
+  visibility: hidden;
 }
 
 .category-image-wrapper {
@@ -1441,16 +1469,16 @@ p,
 
 @media (min-width: 900px) {
   .category-cta.multidimensional-category-cta {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    /** Added to prevent separation of arrow from text in multidimensional cta **/
+    width: 27vw;
+    width: 390px;
+    margin-left: 5.7vw;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 }
 
-/** hover state ofcategory cta and animates arrow **/
+/** hover state of category cta and animates arrow **/
 .category-div:hover .category-cta-text {
   color: #ab5033;
   -webkit-transition: all ease 0.5s;
@@ -1464,6 +1492,12 @@ p,
 
 .category-div:hover .category-cta-arrow path {
   stroke: #ab5033;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.category-div:hover .category-description {
+  color: #332d29;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
@@ -1500,7 +1534,7 @@ p,
 
 @media (min-width: 900px) {
   .category-cta-text.link-arrow-button-text {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -1513,13 +1547,15 @@ p,
 
 /** multidimensional arrow is not flexed. following positioning is used to push it down a bit **/
 .multidimensional-category-arrow {
+  position: relative;
+  top: 0.219rem;
   z-index: 1;
 }
 
-@media (max-width: 899px) {
+@media (min-width: 900px) {
   .multidimensional-category-arrow {
     position: relative;
-    top: 0.219rem;
+    top: 0.34rem;
   }
 }
 
@@ -1532,7 +1568,8 @@ p,
 
 @media (min-width: 900px) {
   .category-description {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    color: #686360;
   }
 }
 
@@ -1540,7 +1577,7 @@ p,
   .category-cta,
   .category-image,
   .category-description {
-    width: 37vw;
+    width: 35vw;
   }
 }
 
@@ -2070,7 +2107,7 @@ p,
 
 @media (min-width: 900px) {
   .mission-history-facilities-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -2148,12 +2185,17 @@ p,
 .why-wood-mills {
   position: relative;
   overflow: hidden;
+  padding: 0 5%;
 }
 
 @media (min-width: 900px) {
   .why-wood-mills {
     padding: 0 14.45%;
   }
+}
+
+.our-story-blob {
+  display: none;
 }
 
 @media (min-width: 900px) {
@@ -2272,9 +2314,15 @@ p,
 
 /** Our Story Page Ends  **/
 /** Our Services Page Begins **/
+@media (max-width: 899px) {
+  .our-services-hero {
+    padding: 6rem 2% 7rem;
+  }
+}
+
 .service-container {
   position: relative;
-  padding: 6rem 20%;
+  padding: 7rem 20%;
 }
 
 .service-container.service-container-1 {
@@ -2322,13 +2370,14 @@ p,
   color: #55372e;
   opacity: 0.4;
   position: absolute;
-  top: 0.5rem;
-  left: 1.5rem;
+  top: 2.5rem;
+  left: 2rem;
 }
 
 @media (min-width: 900px) {
   .service-number {
     font-size: 4.5rem;
+    top: 0.5rem;
     left: 3rem;
   }
 }
@@ -2419,7 +2468,7 @@ p,
 
 .contact-us-main-heading .contact-us-heading-serif {
   font-size: 1.7rem;
-  font-family: "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: spectral, "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   font-weight: normal;
   color: #826b64;
   opacity: 0.5;
@@ -2736,12 +2785,13 @@ p,
 /** FAQ Page Begins **/
 @media (min-width: 900px) {
   .faq-giant-text-hero {
-    padding: 5rem 2%;
+    padding: 7rem 2%;
   }
 }
 
 .faqs-contact-us {
   background-color: #ab5033;
+  background-color: #c66141;
   padding: 1em 2em;
 }
 
@@ -2817,5 +2867,122 @@ p,
 }
 
 /** FAQ Page Ends **/
+/** Stairs and Cabinets Pages Begin **/
+.bespoke-page-header {
+  background-color: #faf7f6;
+  border: 0;
+}
+
+.bespoke-page-main {
+  background-color: #f6f2f0;
+}
+
+.bespoke-nudge1,
+.bespoke-nudge2 {
+  padding: 6rem 15%;
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge1,
+  .bespoke-nudge2 {
+    padding: 7rem 3.125%;
+  }
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge-heading1 {
+    width: 50%;
+  }
+}
+
+.bespoke-nudge-text1 {
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge-text1 {
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.bespoke-nudge-text1-para {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge-text1-para {
+    margin-bottom: 1.5rem;
+    width: 70%;
+    font-size: 1.375rem;
+    line-height: 160%;
+  }
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge2-image-and-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10rem 0;
+  }
+  .bespoke-nudge2-image-and-text.cabinets-nudge2-image-and-text {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge2 {
+    width: 46.9%;
+    padding: 0 10.7%;
+  }
+}
+
+.bespoke-nudge-heading2 {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge-heading2 {
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge-picture2 {
+    width: 50%;
+  }
+}
+
+.bespoke-nudge2-paragraph {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 900px) {
+  .bespoke-nudge2-paragraph {
+    font-size: 1.375rem;
+    line-height: 169.3%;
+    margin-bottom: 6rem;
+  }
+}
+
+/** Stairs and Cabinets Pages End **/
 /*! 7 - Page Specifics End**/
 /*# sourceMappingURL=style.css.map */

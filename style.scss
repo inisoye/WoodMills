@@ -23,8 +23,6 @@
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
-@import url("https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap");
-
 /**
 **TABLE OF CONTENTS**
 1-Variables
@@ -72,11 +70,13 @@ $instagram: linear-gradient(
   rgba(204, 0, 121, 0.7) 100%
 );
 
+// @import url("https://fonts.googleapis.com/css2?family=Spectral:wght@300&display=swap");
+
 $main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$serif: "Baskervville", "Palatino Linotype", Palatino, Palladio,
+$serif: spectral, "Baskervville", "Palatino Linotype", Palatino, Palladio,
   "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
   "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
   "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
@@ -159,17 +159,17 @@ a:hover {
   * {
     //* scrollbar styling begins
     ::-webkit-scrollbar {
-      height: 4.5px;
+      height: 3px;
       width: 10px;
-      background-color: #ffffff;
+      background-color: $light1;
     }
 
     ::-webkit-scrollbar-track {
-      background-color: #ffffff;
+      background-color: $light1;
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: $dark3;
+      background-color: lighten($medium1, 30%);
     }
     //* scrollbar styling ends
   }
@@ -193,14 +193,14 @@ a:hover {
 }
 
 .push-below-header {
-  margin-top: 5.488rem;
+  margin-top: 4.75rem;
 
   @include for-tablet-landscape-up {
-    margin-top: 5.688rem;
+    margin-top: 5.149rem;
   }
 
   @include for-intermediate-screens {
-    margin-top: 5.25rem;
+    margin-top: 5.2rem;
   }
 }
 
@@ -400,10 +400,12 @@ p,
   }
 
   &.orange-regular-button {
+    background-color: lighten($accent, 8%);
     background-color: $accent;
 
     &:hover {
-      background-color: lighten($accent, 8%);
+      background-color: $accent;
+      background-color: lighten($accent, 5%);
     }
   }
 
@@ -496,7 +498,7 @@ p,
 /** Large Modules**/
 /** Header Begins **/
 .header {
-  padding: 1rem $left-right-header-footer-padding-mobile;
+  padding: 1.5rem $left-right-header-footer-padding-mobile;
   justify-content: space-between;
   background-color: $light3;
   position: fixed;
@@ -512,7 +514,7 @@ p,
   }
 
   @include for-tablet-landscape-up {
-    padding: 1.1rem $left-right-header-footer-padding-desktop;
+    padding: 1.7rem $left-right-header-footer-padding-desktop;
   }
 }
 
@@ -550,7 +552,7 @@ p,
   z-index: 10;
 
   /**height of header used to push menu down**/
-  margin-top: 5.488rem;
+  margin-top: 4.5rem;
 }
 
 /** Additional div wrapper added to make fixed parent scrollable **/
@@ -631,6 +633,13 @@ p,
 .mobile-nav-footer-link {
   opacity: 0.7;
   font-size: 0.95rem;
+}
+
+.logo-text-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo-text-svg {
@@ -743,8 +752,13 @@ p,
   background-color: $light3;
   transition: all 1s ease;
 
+  @include for-tablet-landscape-down {
+    background-color: lighten($light4, 1%);
+  }
+
   &:hover {
     background-color: $light4;
+    background-color: lighten($light4, 1%);
   }
 
   @include for-tablet-landscape-up {
@@ -925,6 +939,8 @@ p,
 }
 
 .footer-links-container {
+  display: flex;
+  display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: auto;
   row-gap: 3rem;
@@ -1177,13 +1193,13 @@ p,
   border-bottom: 1px solid $light4;
 
   @include for-tablet-landscape-up {
-    padding: 6.5rem 0;
+    padding: 5rem 0;
   }
 }
 
 .story-nudge-text {
   line-height: 188%;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   padding: 0 9.1%;
 
   @include for-tablet-landscape-up {
@@ -1229,10 +1245,13 @@ p,
 
 .discover-categories-section {
   width: 100%;
-  background-color: $light4;
-  padding: 7rem 0;
+  background-color: $light5;
+  padding: 4.5rem 0;
   border-top: 1px solid $light5;
-  // display: none;
+
+  @include for-tablet-landscape-up {
+    padding: 5rem 0 7rem;
+  }
 }
 
 .discover-categories-heading {
@@ -1269,7 +1288,7 @@ p,
     column-gap: 5rem;
 
     & > div {
-      padding-top: 8rem;
+      padding-top: 5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1297,6 +1316,7 @@ p,
   align-self: center;
   border-bottom: 2px solid transparent;
   padding-bottom: 0.3rem;
+  visibility: hidden;
 }
 
 .category-image-wrapper {
@@ -1323,15 +1343,20 @@ p,
     display: block;
 
     @include for-tablet-landscape-up {
-      display: flex;
-      align-items: center;
+      /** Added to prevent separation of arrow from text in multidimensional cta **/
+      width: 27vw;
+      width: 390px;
+      margin-left: 5.7vw;
+      align-self: flex-start;
     }
   }
 }
 
-/** hover state ofcategory cta and animates arrow **/
+/** hover state of category cta and animates arrow **/
 .category-div {
   &:hover {
+    // background-color: $light4;
+
     .category-cta-text {
       color: $accent;
       transition: all ease 0.5s;
@@ -1343,6 +1368,11 @@ p,
         stroke: $accent;
         transition: all ease 0.5s;
       }
+    }
+
+    .category-description {
+      color: $dark1;
+      transition: all ease 0.5s;
     }
   }
 }
@@ -1363,7 +1393,7 @@ p,
 
 .category-cta-text.link-arrow-button-text {
   @include for-tablet-landscape-up {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -1376,12 +1406,14 @@ p,
 
 /** multidimensional arrow is not flexed. following positioning is used to push it down a bit **/
 .multidimensional-category-arrow {
-  @include for-tablet-landscape-down {
-    position: relative;
-    top: 0.219rem;
-  }
-
+  position: relative;
+  top: 0.219rem;
   z-index: 1;
+
+  @include for-tablet-landscape-up {
+    position: relative;
+    top: 0.34rem;
+  }
 }
 
 .category-description {
@@ -1391,7 +1423,8 @@ p,
   font-size: 0.8rem;
 
   @include for-tablet-landscape-up {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    color: lighten($dark3, 4%);
   }
 }
 
@@ -1399,7 +1432,7 @@ p,
 .category-image,
 .category-description {
   @include for-tablet-landscape-up {
-    width: 37vw;
+    width: 35vw;
   }
 }
 
@@ -1823,7 +1856,7 @@ p,
 
 .mission-history-facilities-text {
   @include for-tablet-landscape-up {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -1884,6 +1917,7 @@ p,
 .why-wood-mills {
   position: relative;
   overflow: hidden;
+  padding: 0 5%;
 
   @include for-tablet-landscape-up {
     padding: 0 14.45%;
@@ -1891,6 +1925,7 @@ p,
 }
 
 .our-story-blob {
+  display: none;
   @include for-tablet-landscape-up {
     display: none;
   }
@@ -1985,15 +2020,15 @@ p,
 /** Our Story Page Ends  **/
 
 /** Our Services Page Begins **/
-// .our-services-header {
-//   @include for-tablet-landscape-up {
-//     border: 0;
-//   }
-// }
+.our-services-hero {
+  @include for-tablet-landscape-down {
+    padding: 6rem 2% 7rem;
+  }
+}
 
 .service-container {
   position: relative;
-  padding: 6rem 20%;
+  padding: 7rem 20%;
 
   &.service-container-1 {
     background-color: $light2;
@@ -2028,11 +2063,12 @@ p,
   color: $medium2;
   opacity: 0.4;
   position: absolute;
-  top: 0.5rem;
-  left: 1.5rem;
+  top: 2.5rem;
+  left: 2rem;
 
   @include for-tablet-landscape-up {
     font-size: 4.5rem;
+    top: 0.5rem;
     left: 3rem;
   }
 }
@@ -2098,13 +2134,6 @@ p,
 /** Our Services Page Ends **/
 
 /** Contact Us Page Begins **/
-// .contact-us-header {
-//   @include for-tablet-landscape-up {
-//     border: 0;
-//     background: $light2;
-//   }
-// }
-
 .contact-us-main-heading {
   text-align: center;
   padding: 7rem 1rem 6rem;
@@ -2373,12 +2402,13 @@ p,
 /** FAQ Page Begins **/
 .faq-giant-text-hero {
   @include for-tablet-landscape-up {
-    padding: 5rem 2%;
+    padding: 7rem 2%;
   }
 }
 
 .faqs-contact-us {
   background-color: $accent;
+  background-color: lighten($accent, 8%);
   padding: 1em 2em;
 
   @include for-tablet-landscape-up {
@@ -2443,5 +2473,101 @@ p,
   }
 }
 /** FAQ Page Ends **/
+
+/** Stairs and Cabinets Pages Begin **/
+.bespoke-page-header {
+  background-color: $light1;
+  border: 0;
+}
+
+.bespoke-page-main {
+  background-color: $light2;
+}
+
+.bespoke-nudge1,
+.bespoke-nudge2 {
+  padding: 6rem $left-right-padding-mobile;
+
+  @include for-tablet-landscape-up {
+    padding: 7rem $left-right-header-footer-padding-desktop;
+  }
+}
+
+.bespoke-nudge1 {
+  @include for-tablet-landscape-up {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.bespoke-nudge-heading1 {
+  @include for-tablet-landscape-up {
+    width: 50%;
+  }
+}
+
+.bespoke-nudge-text1 {
+  margin-top: 2rem;
+
+  @include for-tablet-landscape-up {
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.bespoke-nudge-text1-para {
+  margin-bottom: 0.5rem;
+
+  @include for-tablet-landscape-up {
+    margin-bottom: 1.5rem;
+    width: 70%;
+    font-size: 1.375rem;
+    line-height: 160%;
+  }
+}
+
+.bespoke-nudge2-image-and-text {
+  @include for-tablet-landscape-up {
+    display: flex;
+    align-items: center;
+    padding: 10rem 0;
+
+    &.cabinets-nudge2-image-and-text {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.bespoke-nudge2 {
+  @include for-tablet-landscape-up {
+    width: 46.9%;
+    padding: 0 10.7%;
+  }
+}
+
+.bespoke-nudge-heading2 {
+  margin-bottom: 1.5rem;
+
+  @include for-tablet-landscape-up {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.bespoke-nudge-picture2 {
+  @include for-tablet-landscape-up {
+    width: 50%;
+  }
+}
+
+.bespoke-nudge2-paragraph {
+  margin-bottom: 2rem;
+
+  @include for-tablet-landscape-up {
+    font-size: 1.375rem;
+    line-height: 169.3%;
+    margin-bottom: 6rem;
+  }
+}
+/** Stairs and Cabinets Pages End **/
 
 /*! 7 - Page Specifics End**/
