@@ -2247,6 +2247,7 @@ p,
 
 .why-wood-mills-illustration {
   display: block;
+  overflow: visible;
 }
 
 .why-wood-mills-illustration.manufacturers-illustration {
