@@ -23,6 +23,58 @@
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
+@font-face {
+  font-family: "SpGroSemi";
+  font-style: normal;
+  font-weight: 600;
+  src: local("SpaceGrotesk-SemiBold"),
+    url("fonts/SpaceGrotesk-SemiBold.woff2") format("woff2")
+      /* will be preloaded */,
+    url("fonts/SpaceGrotesk-SemiBold.woff") format("woff"),
+    url("fonts/SpaceGrotesk-SemiBold.ttf") format("truetype"),
+    url("fonts/SpaceGrotesk-SemiBold.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF; /* Latin glyphs */
+}
+@font-face {
+  font-family: "SpGroBold";
+  font-style: normal;
+  font-weight: 600;
+  src: local("SpaceGrotesk-Bold"),
+    url("fonts/SpaceGrotesk-Bold.woff2") format("woff2") /* will be preloaded */,
+    url("fonts/SpaceGrotesk-Bold.woff") format("woff"),
+    url("fonts/SpaceGrotesk-Bold.ttf") format("truetype"),
+    url("fonts/SpaceGrotesk-Bold.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+  font-family: "SpGroReg";
+  font-style: normal;
+  font-weight: 400;
+  src: local("SpaceGrotesk-Regular"),
+    url("fonts/SpaceGrotesk-Regular.woff2") format("woff2")
+      /* will be preloaded */,
+    url("fonts/SpaceGrotesk-Regular.woff") format("woff"),
+    url("fonts/SpaceGrotesk-Regular.ttf") format("truetype"),
+    url("fonts/SpaceGrotesk-Regular.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+// @font-face {
+//   font-family: "SpGroSemi";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local("SpaceGrotesk-Medium"),
+//     url("fonts/SpaceGrotesk-Medium.woff2") format("woff2")
+//       /* will be preloaded */,
+//     url("fonts/SpaceGrotesk-Medium.woff") format("woff"),
+//     url("fonts/SpaceGrotesk-Medium.ttf") format("truetype"),
+//     url("fonts/SpaceGrotesk-Medium.eot") format("embedded-opentype");
+//   unicode-range: U+000-5FF; /* Latin glyphs */
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+
 /**
 **TABLE OF CONTENTS**
 1-Variables
@@ -54,7 +106,9 @@ $light5: #d7ccc8;
 $medium1: #826b64;
 $medium2: #55372e;
 
-$accent: #ab5033;
+$accent-old: #ab5033;
+$accent: #ab4133;
+// $accent: #ab3333;
 
 $whatsapp: rgba(37, 211, 102, 0.7);
 $facebook: linear-gradient(
@@ -70,10 +124,12 @@ $instagram: linear-gradient(
   rgba(204, 0, 121, 0.7) 100%
 );
 
-$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$heading: Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$main: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$heading: "SpGroBold", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
 $serif: "Baskervville", "Palatino Linotype", Palatino, Palladio,
   "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
   "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
@@ -201,17 +257,17 @@ a:hover {
   }
 }
 
-.push-below-header {
-  margin-top: 4.75rem;
+// .push-below-header {
+//   margin-top: 4.75rem;
 
-  @include for-tablet-landscape-up {
-    margin-top: 5.149rem;
-  }
+//   @include for-tablet-landscape-up {
+//     margin-top: 5.149rem;
+//   }
 
-  @include for-intermediate-screens {
-    margin-top: 5.2rem;
-  }
-}
+//   @include for-intermediate-screens {
+//     margin-top: 5.2rem;
+//   }
+// }
 
 .transparent-bg {
   background-color: transparent;
@@ -315,6 +371,7 @@ a:hover {
 
 .giant-subheading {
   font-family: $heading;
+  font-weight: 600;
   font-size: 1.05rem;
 
   @include for-tablet-landscape-up {
@@ -325,8 +382,9 @@ a:hover {
 .heading-level-1 {
   font-size: 2.15rem;
   font-family: $heading;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: -0.025em;
+  // letter-spacing: -0.025em;
   line-height: 109.5%;
 
   @include for-tablet-landscape-up {
@@ -349,7 +407,8 @@ a:hover {
 .heading-level-2 {
   font-size: 1.5rem;
   font-family: $heading;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  // letter-spacing: -0.025em;
   text-transform: uppercase;
 
   @include for-tablet-landscape-up {
@@ -369,7 +428,8 @@ a:hover {
 .heading-level-small {
   font-size: 1.1rem;
   font-family: $heading;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  // letter-spacing: -0.025em;
   text-transform: uppercase;
 
   @include for-tablet-landscape-up {
@@ -418,6 +478,15 @@ p,
     }
   }
 
+  &.main-hero-button {
+    background-color: $accent-old;
+
+    &:hover {
+      background-color: lighten($accent-old, 5%);
+      background-color: $accent;
+    }
+  }
+
   &.light-regular-button {
     background-color: $light2;
     color: $dark1;
@@ -449,12 +518,18 @@ p,
 
 .link-button {
   font-family: $heading;
+  font-weight: 600;
   font-size: 0.75rem;
   color: $accent;
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 2px solid $accent;
   padding-bottom: 0.313rem;
+  transition: letter-spacing 0.3s ease;
+
+  &:hover {
+    letter-spacing: 0.1em;
+  }
 
   @include for-tablet-landscape-up {
     font-size: 1.125rem;
@@ -470,6 +545,7 @@ p,
 
     &.syne {
       font-family: $heading;
+      font-weight: 600;
       text-transform: uppercase;
     }
   }
@@ -511,6 +587,7 @@ p,
   justify-content: space-between;
   background-color: $light3;
   position: fixed;
+  position: sticky;
   z-index: 5;
   top: 0;
   width: 100%;
@@ -528,22 +605,28 @@ p,
 }
 
 .header-banner-container {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   top: 0;
   background-color: $dark1;
   text-align: center;
   display: none;
+
+  // @include for-tablet-landscape-down {
+  //   display: none;
+  // }
 }
 
 .header-banner-message {
   color: $light2;
   font-size: 0.75rem;
   padding: 0.938rem 0;
+  font-family: $heading;
+  letter-spacing: 0.3px;
 
   @include for-tablet-landscape-up {
-    font-size: 1rem;
-    padding: 0.75rem 0;
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
   }
 }
 
@@ -656,6 +739,7 @@ p,
 .mobile-nav-item-link-header,
 .mobile-nav-footer-link {
   font-family: $heading;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -918,12 +1002,14 @@ p,
   }
   .heading-level-3 {
     font-family: $heading;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 1.35rem;
     line-height: 109.5%;
 
     @include for-tablet-landscape-up {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
+      width: 60%;
     }
   }
 
@@ -935,6 +1021,7 @@ p,
 
     @include for-tablet-landscape-up {
       font-size: 1.125rem;
+      width: 96%;
     }
   }
 }
@@ -1154,6 +1241,22 @@ p,
 /** Landing Page Begins **/
 .hero {
   background-color: $light5;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+
+    & > .first-half {
+      @include for-tablet-landscape-up {
+        width: 50%;
+      }
+    }
+
+    & > .second-half {
+      @include for-tablet-landscape-up {
+        width: 50%;
+      }
+    }
+  }
 }
 
 .hero-text {
@@ -1169,10 +1272,10 @@ p,
 }
 
 .home-main-text {
-  width: 17.5rem;
+  // width: 17.5rem;
 
   @include for-tablet-landscape-up {
-    width: 24.25rem;
+    // width: 24.25rem;
   }
 
   .home-main-text-s {
@@ -1188,11 +1291,11 @@ p,
 
   .home-main-text-l {
     @include for-tablet-landscape-up {
-      font-size: 2.95rem;
+      font-size: 3rem;
     }
 
     @include for-intermediate-screens {
-      font-size: 2.55rem;
+      font-size: 3rem;
     }
   }
 }
@@ -1298,6 +1401,8 @@ p,
   .paragraph {
     margin-bottom: 0.625rem;
     letter-spacing: normal;
+    font-family: $heading;
+    font-weight: 600;
   }
 
   .heading-level2-big {
@@ -1344,6 +1449,7 @@ p,
   font-size: 1.5rem;
   font-family: $main;
   font-family: $heading;
+  font-weight: 600;
   font-weight: normal;
   margin-bottom: 1rem;
   align-self: center;
@@ -1374,11 +1480,13 @@ p,
 
   &.multidimensional-category-cta {
     display: block;
+    max-width: 260px;
 
     @include for-tablet-landscape-up {
       /** Added to prevent separation of arrow from text in multidimensional cta **/
-      width: 27vw;
-      width: 390px;
+      // width: 27vw;
+      // width: 390px;
+      width: 70%;
       margin-left: 5.7vw;
       align-self: flex-start;
     }
@@ -1426,7 +1534,7 @@ p,
 
 .category-cta-text.link-arrow-button-text {
   @include for-tablet-landscape-up {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -1457,7 +1565,7 @@ p,
 
   @include for-tablet-landscape-up {
     font-size: 1.05rem;
-    color: lighten($dark3, 4%);
+    // color: lighten($dark3, 4%);
   }
 }
 
@@ -1562,7 +1670,6 @@ p,
 .bespoke-product-heading-big {
   display: block;
   margin-bottom: 0.5rem;
-  font-family: $heading;
 
   @include for-tablet-landscape-up {
     font-size: 1.77rem;
@@ -1620,6 +1727,7 @@ p,
 
 .home-review-person {
   font-family: $heading;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 0.875rem;
 
@@ -2094,6 +2202,7 @@ p,
 .service-number {
   font-size: 2.5rem;
   font-family: $heading;
+  font-weight: 600;
   color: $medium2;
   opacity: 0.4;
   position: absolute;
@@ -2117,6 +2226,7 @@ p,
 
   @include for-tablet-landscape-up {
     font-size: 2.25rem;
+    line-height: 109.5%;
   }
 }
 
@@ -2127,7 +2237,8 @@ p,
   margin: 1rem 0 3rem;
 
   .underline {
-    font-weight: bold;
+    font-family: $heading;
+    font-weight: 600;
     text-decoration: none;
   }
 
@@ -2335,6 +2446,7 @@ p,
 
 .telephone-email-heading {
   font-family: $heading;
+  font-weight: 600;
   color: $dark3;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -2404,6 +2516,7 @@ p,
 
 .showroom-factory-address-title {
   font-family: $heading;
+  font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   color: $light3;
@@ -2442,7 +2555,7 @@ p,
 
 .faqs-contact-us {
   background-color: $accent;
-  background-color: lighten($accent, 8%);
+  // background-color: lighten($accent, 8%);
   padding: 1em 2em;
 
   @include for-tablet-landscape-up {
@@ -2497,6 +2610,7 @@ p,
 
 .question {
   font-family: $heading;
+  font-weight: 600;
   text-transform: uppercase;
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
@@ -2581,9 +2695,11 @@ p,
 
 .bespoke-nudge-heading2 {
   margin-bottom: 1.5rem;
+  line-height: 1.9rem;
 
   @include for-tablet-landscape-up {
     margin-bottom: 1.875rem;
+    line-height: 2.625rem;
   }
 }
 
