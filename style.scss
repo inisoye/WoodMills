@@ -2285,10 +2285,17 @@ p,
     opacity: 0.5;
     text-transform: capitalize;
     display: block;
+    margin-bottom: 0.8rem;
 
     @include for-tablet-landscape-up {
       font-size: 3rem;
       margin-bottom: 1rem;
+    }
+
+    @media (max-width: 409px) {
+      width: 16rem;
+      margin: auto;
+      margin-bottom: 0.8rem;
     }
   }
 
@@ -2311,7 +2318,7 @@ p,
     @include for-tablet-landscape-up {
       width: 35%;
 
-      @media (max-width: 1005px) {
+      @media (max-width: 1065px) {
         width: 55%;
       }
 
