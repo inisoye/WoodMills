@@ -35,45 +35,6 @@
     url("fonts/SpaceGrotesk-SemiBold.eot") format("embedded-opentype");
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
-@font-face {
-  font-family: "SpGroBold";
-  font-style: normal;
-  font-weight: 600;
-  src: local("SpaceGrotesk-Bold"),
-    url("fonts/SpaceGrotesk-Bold.woff2") format("woff2") /* will be preloaded */,
-    url("fonts/SpaceGrotesk-Bold.woff") format("woff"),
-    url("fonts/SpaceGrotesk-Bold.ttf") format("truetype"),
-    url("fonts/SpaceGrotesk-Bold.eot") format("embedded-opentype");
-  unicode-range: U+000-5FF; /* Latin glyphs */
-}
-
-@font-face {
-  font-family: "SpGroReg";
-  font-style: normal;
-  font-weight: 400;
-  src: local("SpaceGrotesk-Regular"),
-    url("fonts/SpaceGrotesk-Regular.woff2") format("woff2")
-      /* will be preloaded */,
-    url("fonts/SpaceGrotesk-Regular.woff") format("woff"),
-    url("fonts/SpaceGrotesk-Regular.ttf") format("truetype"),
-    url("fonts/SpaceGrotesk-Regular.eot") format("embedded-opentype");
-  unicode-range: U+000-5FF; /* Latin glyphs */
-}
-
-@font-face {
-  font-family: "SpGroMed";
-  font-style: normal;
-  font-weight: 400;
-  src: local("SpaceGrotesk-Medium"),
-    url("fonts/SpaceGrotesk-Medium.woff2") format("woff2")
-      /* will be preloaded */,
-    url("fonts/SpaceGrotesk-Medium.woff") format("woff"),
-    url("fonts/SpaceGrotesk-Medium.ttf") format("truetype"),
-    url("fonts/SpaceGrotesk-Medium.eot") format("embedded-opentype");
-  unicode-range: U+000-5FF; /* Latin glyphs */
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
 
 /**
 **TABLE OF CONTENTS**
@@ -124,13 +85,12 @@ $instagram: linear-gradient(
   rgba(204, 0, 121, 0.7) 100%
 );
 
-$main: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol";
+$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $heading: "SpGroSemi", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
-$serif: "Baskervville", "Palatino Linotype", Palatino, Palladio,
+$serif: "SpGroSemi", "Baskervville", "Palatino Linotype", Palatino, Palladio,
   "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
   "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
   "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
@@ -588,6 +548,7 @@ p,
 /** Header Begins **/
 .header {
   padding: 1.5rem $left-right-header-footer-padding-mobile;
+  padding-left: 0;
   justify-content: space-between;
   background-color: $light3;
   position: fixed;
@@ -649,8 +610,10 @@ p,
   z-index: 10;
   opacity: 0;
 
+  //! Toggle disappears fix with JS
+  /*! Toggle disappears fix with JS **/
   /** toggle fixed as header is fixed anyway **/
-  position: fixed;
+  position: absolute;
   /** Stops position fixed item from disappearing **/
   transform: translateZ(0);
   left: 0;
@@ -661,6 +624,7 @@ p,
 
 .mobile-nav-icon-svg {
   position: absolute;
+  margin-left: 4vw;
 }
 
 .mobile-nav-lists-container {
@@ -1024,7 +988,6 @@ p,
 
     @include for-tablet-landscape-up {
       font-size: 2.2rem;
-      width: 60%;
     }
   }
 
@@ -2571,6 +2534,7 @@ p,
   background-color: $accent;
   // background-color: lighten($accent, 8%);
   padding: 1em 2em;
+  line-height: 170%;
 
   @include for-tablet-landscape-up {
     font-size: 1.2rem;
