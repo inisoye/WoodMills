@@ -25,6 +25,15 @@
   /* Latin glyphs */
 }
 
+@font-face {
+  font-family: "SpGroReg";
+  font-style: normal;
+  font-weight: 400;
+  src: local("SpaceGrotesk-Regular"), url("fonts/SpaceGrotesk-Regular.woff2") format("woff2"), url("fonts/SpaceGrotesk-Regular.woff") format("woff"), url("fonts/SpaceGrotesk-Regular.ttf") format("truetype"), url("fonts/SpaceGrotesk-Regular.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF;
+  /* Latin glyphs */
+}
+
 /**
 **TABLE OF CONTENTS**
 1-Variables
@@ -236,7 +245,7 @@ html {
 /*! 4 - Layout & Alignment Ends**/
 /*! 5 - Typography Begins**/
 .heading-giant {
-  font-family: "SpGroSemi", "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: "SpGroReg", "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   font-weight: normal;
   text-align: center;
   font-size: 5.375rem;
@@ -2554,7 +2563,7 @@ p,
 
 .contact-us-main-heading .contact-us-heading-serif {
   font-size: 1.7rem;
-  font-family: "SpGroSemi", "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: "SpGroReg", "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   font-weight: normal;
   color: #826b64;
   opacity: 0.5;
