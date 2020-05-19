@@ -103,7 +103,7 @@ $main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
 $heading: "SpGroSemi", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
-$serif: "SpGroReg", "Baskervville", "Palatino Linotype", Palatino, Palladio,
+$serif: "Baskervville", "Palatino Linotype", Palatino, Palladio,
   "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style",
   "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond",
   "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook",
@@ -357,7 +357,7 @@ a:hover {
 }
 
 .heading-level-1 {
-  font-size: 2.15rem;
+  font-size: 2.55rem;
   font-family: $heading;
   font-weight: 600;
   text-transform: uppercase;
@@ -369,7 +369,7 @@ a:hover {
   }
 
   @include for-intermediate-screens {
-    font-size: 2.55rem;
+    font-size: 2.95rem;
   }
 
   .home-main-text-s {
@@ -2614,8 +2614,14 @@ p,
   margin-bottom: 0.5rem;
 
   @include for-tablet-landscape-up {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
+  }
+}
+
+.answer {
+  @include for-tablet-landscape-up {
+    font-size: 1.15rem;
   }
 }
 /** FAQ Page Ends **/
