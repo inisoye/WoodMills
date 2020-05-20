@@ -272,7 +272,7 @@ html {
 }
 
 .heading-level-1 {
-  font-size: 2.55rem;
+  font-size: 2.35rem;
   font-family: "SpGroSemi", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   text-transform: uppercase;
@@ -288,12 +288,6 @@ html {
 @media (min-width: 900px) and (max-width: 1154px) {
   .heading-level-1 {
     font-size: 2.95rem;
-  }
-}
-
-@media (max-width: 343px) {
-  .heading-level-1 {
-    font-size: 2.35rem;
   }
 }
 
