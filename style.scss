@@ -36,6 +36,7 @@
   unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
+
 @font-face {
   font-family: "SpGroReg";
   font-style: normal;
@@ -68,21 +69,22 @@ $dark2: #211d1a;
 $dark3: #5d5956;
 
 $light1: #faf7f6;
+$light1: lighten($light1, 7%);
 $light2: #f6f2f0;
-// $light2: lighten($light2a, 4%);
+$light2: lighten($light2, 7%);
 $light3: #eae4e2;
-// $light3: lighten($light3a, 4%);
+$light3: lighten($light3, 7%);
 $light4: #ddd4d0;
-// $light4: lighten($light4a, 4%);
+$light4: lighten($light4, 7%);
 $light5: #d7ccc8;
-// $light5: lighten($light5a, 6%);
+$light5: lighten($light5, 6%);
 
 $medium1: #826b64;
 $medium2: #55372e;
 
 $accent-old: #ab5033;
-$accent: #ab4133;
 $accent: #ab3333;
+$accent: #ab5033;
 
 $whatsapp: rgba(37, 211, 102, 0.7);
 $facebook: linear-gradient(
@@ -98,7 +100,7 @@ $instagram: linear-gradient(
   rgba(204, 0, 121, 0.7) 100%
 );
 
-$main: Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+$main: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $heading: "SpGroSemi", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -1202,7 +1204,7 @@ p,
 
 /** Giant Text Hero Begins **/
 .giant-text-hero {
-  padding: 3.8rem 2% 4.5rem;
+  padding: 2rem 2% 4.5rem;
 
   @include for-tablet-landscape-up {
     padding: 9rem 2%;
@@ -1216,7 +1218,7 @@ p,
 }
 
 .giant-text-hero-small-text {
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 
   @media (max-width: 372px) {
     font-size: 0.88rem;
@@ -2312,7 +2314,7 @@ p,
 
 .contact-us-details {
   width: 100%;
-  background-color: #ddd4d0;
+  background-color: $light4;
 
   @include for-tablet-landscape-up {
     display: flex;
