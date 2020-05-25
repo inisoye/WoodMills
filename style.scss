@@ -99,7 +99,7 @@ $instagram: linear-gradient(
   rgba(204, 0, 121, 0.7) 100%
 );
 
-$main: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+$main: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
 $heading: "SpGroSemi", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -440,6 +440,7 @@ p,
   background-color: $dark1;
   padding: 1.05rem 1.55rem;
   transition: all ease 0.3s;
+  border-radius: 20px;
 
   &:hover {
     cursor: pointer;
@@ -487,6 +488,7 @@ p,
   padding: 1.05rem 1.55rem;
   background-color: $light1;
   border: 0;
+  border-radius: 20px;
 
   @include for-tablet-landscape-up {
     font-size: 1.125rem;
@@ -1742,7 +1744,7 @@ p,
 }
 
 .home-services-header {
-  padding: 6.125rem 13.6% 6.125rem;
+  padding: 6.125rem 19% 6.125rem;
 
   @include for-tablet-landscape-up {
     padding: 6.125rem 8% 6.125rem;
@@ -1756,7 +1758,7 @@ p,
     letter-spacing: normal;
     line-height: 176.5%;
     opacity: 0.7;
-    margin: 0.6rem 0 1.5rem;
+    margin: 0.6rem 0 2.5rem;
 
     @include for-tablet-landscape-up {
       margin: 0.6rem 0 3rem;
@@ -2283,7 +2285,7 @@ p,
 
   .contact-us-heading-serif {
     font-size: 1.7rem;
-    font-family: $serif;
+    font-family: $main;
     font-weight: normal;
     color: $medium1;
     opacity: 0.5;

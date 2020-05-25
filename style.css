@@ -337,7 +337,7 @@ html {
 p,
 .paragraph {
   font-size: 0.95rem;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-transform: none;
   line-height: 188%;
 }
@@ -354,7 +354,7 @@ p,
 /** Small Modules**/
 .regular-button {
   font-size: 0.877rem;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-transform: capitalize;
   text-decoration: none;
   color: #f6f2f0;
@@ -362,6 +362,7 @@ p,
   padding: 1.05rem 1.55rem;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  border-radius: 20px;
 }
 
 .regular-button:hover {
@@ -407,10 +408,11 @@ p,
 
 .regular-input {
   font-size: 0.877rem;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   padding: 1.05rem 1.55rem;
   background-color: #faf7f6;
   border: 0;
+  border-radius: 20px;
 }
 
 @media (min-width: 900px) {
@@ -668,7 +670,7 @@ p,
 }
 
 .mobile-nav-item-link {
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.95rem;
 }
 
@@ -740,7 +742,7 @@ p,
 
 .desktop-nav-link {
   text-decoration: none;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.1rem;
 }
 
@@ -1099,7 +1101,7 @@ p,
 .footer-link-heading,
 .footer-link,
 .social-link {
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   list-style-type: none;
   text-decoration: none;
 }
@@ -1199,7 +1201,7 @@ p,
 }
 
 .footer-credit-text {
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #faf7f6;
   font-size: 0.85rem;
   line-height: 185%;
@@ -1522,7 +1524,7 @@ p,
 
 .category-title {
   font-size: 1.5rem;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-family: "SpGroSemi", Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   font-weight: normal;
@@ -1847,7 +1849,7 @@ p,
 
 .home-review-quote {
   font-size: 1.25rem;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: normal;
   line-height: 156%;
   margin-bottom: 2.25rem;
@@ -1889,7 +1891,7 @@ p,
 }
 
 .home-services-header {
-  padding: 6.125rem 13.6% 6.125rem;
+  padding: 6.125rem 19% 6.125rem;
 }
 
 @media (min-width: 900px) {
@@ -1906,7 +1908,7 @@ p,
   letter-spacing: normal;
   line-height: 176.5%;
   opacity: 0.7;
-  margin: 0.6rem 0 1.5rem;
+  margin: 0.6rem 0 2.5rem;
 }
 
 @media (min-width: 900px) {
@@ -2500,7 +2502,7 @@ p,
 }
 
 .service-subheading {
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: normal;
   font-size: 1.45rem;
   margin: 1rem 0 3rem;
@@ -2565,7 +2567,7 @@ p,
 
 .contact-us-main-heading .contact-us-heading-serif {
   font-size: 1.7rem;
-  font-family: "Baskervville", "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: normal;
   color: #826b64;
   opacity: 0.5;
@@ -2748,7 +2750,7 @@ p,
 
 .social-link-text {
   color: #ffffff;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin-right: 0.5rem;
 }
 
@@ -2789,7 +2791,7 @@ p,
 }
 
 .telephone-email-text {
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.2rem;
   line-height: 170%;
   text-decoration: none;
@@ -2923,7 +2925,7 @@ p,
 .faqs-contact-us-heading,
 .faqs-contact-us-link {
   color: #faf7f6;
-  font-family: Basier, "SpGroReg", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "SpGroReg", Basier, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-align: center;
   font-weight: normal;
 }
