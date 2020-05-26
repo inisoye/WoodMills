@@ -132,6 +132,10 @@ html {
   text-decoration: underline;
 }
 
+img {
+  opacity: 0.95;
+}
+
 /*! 3 - Defaults End**/
 /*! 4 - Layout & Alignment Begins**/
 .display-flex {
@@ -1191,6 +1195,7 @@ p,
 .footer-logo-icon {
   height: 3.125rem;
   width: 3.125rem;
+  overflow: visible;
 }
 
 @media (min-width: 900px) {
@@ -2144,6 +2149,7 @@ p,
 
 .our-story-hero-text {
   position: absolute;
+  z-index: 5;
   color: #eae4e2;
   width: 100%;
   padding: 0 10%;
